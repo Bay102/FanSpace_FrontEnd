@@ -1,0 +1,3 @@
+Installed Shit! 
+
+React Native Navigation - for Expo 
