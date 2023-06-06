@@ -6,20 +6,21 @@ export const styles = StyleSheet.create({
     height: Dimensions.get('window').height + 10,
     backgroundColor: 'black',
     borderWidth: 2,
-    borderColor: 'black',
+    // borderColor: 'white',
   },
 
   PopOutNav: {
-    backgroundColor: '#CCA154',
+    backgroundColor: 'grey',
+    // backgroundColor: '#CCA154',
     borderWidth: 2,
     borderColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
     width: 70,
-    position: 'absolute',
+    position: 'relative',
     height: Dimensions.get('window').height,
-    top: 35,
-    left: 0,
+    // top: 35,
+    // left: 100,
   },
 
   popOutNavItemCircle: {
@@ -28,7 +29,7 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 25,
     backgroundColor: 'white',
-    marginTop: 10,
+    marginTop: 30,
     marginBottom: 20,
   },
 
@@ -53,7 +54,6 @@ export const styles = StyleSheet.create({
   bottomNavItemContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 5,
-    marginRight: 50,
+    marginBottom: 15
   }
 });

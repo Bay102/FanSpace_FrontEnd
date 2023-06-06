@@ -1,3 +1,4 @@
-Installed Shit! 
+**** Installed Packages! ****
 
 React Native Navigation - for Expo 
+React Navite Animatable - for animations
