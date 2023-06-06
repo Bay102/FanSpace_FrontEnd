@@ -17,22 +17,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 70,
     position: 'absolute',
-    height: Dimensions.get('window').height ,
+    height: Dimensions.get('window').height,
     top: 35,
     left: 0,
   },
 
-  BottomNav: {
-    position: 'absolute',
-    bottom: 0,
-    width: Dimensions.get('window').width,
-    height: 70,
-    borderWidth: 2,
-    borderColor: 'black',
-    backgroundColor: 'grey',
-    zIndex: 1,
-  },
- 
   popOutNavItemCircle: {
     width: 50,
     height: 50,
@@ -40,6 +29,31 @@ export const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: 'white',
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 20,
+  },
+
+  navIcon: {
+    textAlign: 'center',
+  },
+
+  BottomNav: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'flex-start',
+    position: 'absolute',
+    bottom: 0,
+    width: Dimensions.get('window').width,
+    height: 70,
+    borderWidth: 2,
+    borderColor: 'black',
+    backgroundColor: 'grey',
+    color: 'white',
+  },
+
+  bottomNavItemContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 5,
+    marginRight: 50,
   }
 });

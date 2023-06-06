@@ -20,7 +20,7 @@ export const PopOutNav = () => {
         <ScrollView>
           {navItems.map((item) => (
             <View style={styles.popOutNavItemCircle} key={item.id} >
-              <Text >{item.title}</Text>
+              <Text style={styles.navIcon}>{item.title}</Text>
             </View>
           ))}
         </ScrollView>
