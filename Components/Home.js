@@ -3,16 +3,19 @@
 import { Button, Text, View } from 'react-native';
 import { styles } from './Styles/Styles';
 import { PopOutNav } from './PopOutNav';
+import { BottomNav } from './BottomNav';
 
 export const Home = ({ navigation }) => {
   return (
     <>
-      <Text>Welcome to FanApp</Text>
-      <Button
-        title="Login|SignUp"
-        onPress={() => navigation.navigate('LogIn')}
-      />
-      <PopOutNav />
+      <View style={styles.HomeContainer}>
+        {/* <Button
+          title="Login | SignUp"
+          onPress={() => navigation.navigate('LogIn')}
+        /> */}
+        <PopOutNav />
+        <BottomNav />
+      </View>
     </>
   );
 };
