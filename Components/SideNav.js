@@ -10,8 +10,10 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
 
-export const PopOutNav = () => {
+export const SideNav = () => {
   const { showSideNav } = useNavigationProvider();
+
+  //* Realistically nav icons will be rendered from User Data / Backend
 
   const navItems = [
     { id: '1', title: '' },
@@ -30,12 +32,12 @@ export const PopOutNav = () => {
       <Animatable.View
         animation={'slideInLeft'}
         duration={800}
-        style={{ width: 80, height: '100%', backgroundColor: 'black' }}
+        style={{ width: 70, height: '100%', backgroundColor: 'black' }}
       >
-        <View style={styles.PopOutNav}>
+        <View style={styles.sideNav}>
           <ScrollView>
             {navItems.map((item) => (
-              <View style={styles.popOutNavItemCircle} key={item.id}>
+              <View style={styles.sideNavCircle} key={item.id}>
                 <Text style={styles.navIcon} onPress={''}>
                   {item.title}
                 </Text>

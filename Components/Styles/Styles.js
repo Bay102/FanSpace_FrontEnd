@@ -4,14 +4,13 @@ export const styles = StyleSheet.create({
   HomeContainer: {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height + 10,
-    backgroundColor: 'black',
+    backgroundColor: '#2c303b',
     borderWidth: 2,
     // borderColor: 'white',
   },
 
-  PopOutNav: {
-    backgroundColor: 'grey',
-    // backgroundColor: '#CCA154',
+  sideNav: {
+    backgroundColor: '#141420',
     borderWidth: 2,
     borderColor: 'black',
     alignItems: 'center',
@@ -19,14 +18,12 @@ export const styles = StyleSheet.create({
     width: 70,
     position: 'relative',
     height: Dimensions.get('window').height,
-    // top: 35,
-    // left: 100,
   },
 
-  popOutNavItemCircle: {
+  sideNavCircle: {
     width: 50,
     height: 50,
-    borderWidth: 2,
+    borderWidth: 3,
     borderRadius: 25,
     backgroundColor: 'white',
     marginTop: 30,
@@ -40,20 +37,40 @@ export const styles = StyleSheet.create({
   BottomNav: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     position: 'absolute',
-    bottom: 0,
+    bottom: 5,
     width: Dimensions.get('window').width,
-    height: 70,
-    borderWidth: 2,
-    borderColor: 'black',
-    backgroundColor: 'grey',
+    height: 60,
+    borderWidth: 1,
+    borderColor: '',
+    backgroundColor: '#191919',
     color: 'white',
   },
 
   bottomNavItemContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 15
-  }
+  },
+
+  loginContainer: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'red',
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  inputsContainer: {
+    flex: 0,
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderRadius:30,
+    width: 300,
+    height: 300,
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
 });

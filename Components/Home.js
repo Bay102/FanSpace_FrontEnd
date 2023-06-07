@@ -1,6 +1,6 @@
-import { View } from 'react-native';
+import { Button, View } from 'react-native';
 import { styles } from './Styles/Styles';
-import { PopOutNav } from './PopOutNav';
+import { SideNav } from './SideNav';
 import { BottomNav } from './BottomNav';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
 
@@ -10,7 +10,7 @@ export const Home = ({ navigation }) => {
   return (
     <>
       <View style={styles.HomeContainer}>
-        {showSideNav && <PopOutNav />}
+        {showSideNav && <SideNav />}
         <BottomNav />
       </View>
     </>

@@ -1,4 +1,4 @@
-import { Pages } from './Components/Screens';
+import { Pages } from './Components/Pages';
 
 export default function App() {
   return (

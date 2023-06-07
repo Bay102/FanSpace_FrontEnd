@@ -1,21 +1,22 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from 'react';
 
-const NavigationContext = createContext(); 
+const NavigationContext = createContext();
 
-export const NavigationProvider = ({children}) => {
+export const NavigationProvider = ({ children }) => {
+  
    const [showSideNav, setShowSideNav] = useState(true);
 
-   const toggleSideNav = () => {
-      showSideNav ? setShowSideNav(false) : setShowSideNav(true);
-   }
+  const toggleSideNav = () => {
+    showSideNav ? setShowSideNav(false) : setShowSideNav(true);
+  };
 
-   return ( 
-      <>
-      <NavigationContext.Provider value={{showSideNav, toggleSideNav}}>
-         {children}
+  return (
+    <>
+      <NavigationContext.Provider value={{ showSideNav, toggleSideNav }}>
+        {children}
       </NavigationContext.Provider>
-      </>
-   )
-}
+    </>
+  );
+};
 
-export const useNavigationProvider = () => useContext(NavigationContext)
+export const useNavigationProvider = () => useContext(NavigationContext);
