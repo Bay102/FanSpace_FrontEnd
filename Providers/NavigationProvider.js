@@ -5,16 +5,12 @@ const NavigationContext = createContext();
 export const NavigationProvider = ({ children }) => {
   const [showSideNav, setShowSideNav] = useState(true);
   const [showBottomNav, setShowBottomNav] = useState(true);
-  const [teamPage, setTeamPage] = useState(null);
-  const [showTeamPage, setShowTeamPage] = useState(false);
+
+  const [activePage, setActivePage] = useState('FanApp');
 
   const toggleSideNav = () => {
     showSideNav ? setShowSideNav(false) : setShowSideNav(true);
   };
-
-  const toggleTeamPage = () => {
-    showTeamPage ? setShowTeamPage(false) : setShowTeamPage(true)
-  }
 
   return (
     <>
@@ -24,9 +20,8 @@ export const NavigationProvider = ({ children }) => {
           toggleSideNav,
           showBottomNav,
           setShowBottomNav,
-          showTeamPage,
-          setShowTeamPage,
-          toggleTeamPage
+          activePage,
+          setActivePage,
         }}
       >
         {children}

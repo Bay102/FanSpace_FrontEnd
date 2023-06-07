@@ -9,7 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCommentDollar, faHouse } from '@fortawesome/free-solid-svg-icons';
 
 export const SideNav = () => {
-  const { showSideNav, toggleTeamPage } = useNavigationProvider();
+  const { setActivePage, showSideNav} =
+    useNavigationProvider();
 
   //* Realistically nav icons will be rendered based on User Data / Backend
 
@@ -26,13 +27,13 @@ export const SideNav = () => {
       icon: <FontAwesomeIcon icon={faCommentDollar} size={28} color="white" />,
       onPress: '',
     },
-    { id: '3', title: '', image: VGK, onPress: toggleTeamPage },
+    { id: '3', title: '', image: VGK, onPress: () => setActivePage('VGK') },
     { id: '4', title: '', image: RAIDERS, onPress: '' },
     {
       id: '5',
       title: '',
       icon: <FontAwesomeIcon icon={faHouse} size={28} color="white" />,
-      onPress: '',
+      onPress: () => setActivePage('FanApp'),
     },
   ];
 
