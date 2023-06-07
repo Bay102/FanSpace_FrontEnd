@@ -30,7 +30,7 @@ export const SideNav = () => {
   return (
     <>
       <Animatable.View
-        animation={'slideInLeft'}
+        animation={'slideInRight'}
         duration={800}
         style={{ width: 70, height: '100%', backgroundColor: 'black' }}
       >

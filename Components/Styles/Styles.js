@@ -2,21 +2,33 @@ import { Dimensions, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   HomeContainer: {
+    flex: 1,
+    flexDirection: 'row',
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height + 10,
     backgroundColor: '#2c303b',
     borderWidth: 2,
-    // borderColor: 'white',
+  },
+
+  homeContent: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'blue'
+  },
+
+  sideNavContainer: {
+    flex: 1,
+    borderWidth: 1,
   },
 
   sideNav: {
+    flex: 3,
     backgroundColor: '#141420',
     borderWidth: 2,
     borderColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
     width: 70,
-    position: 'relative',
     height: Dimensions.get('window').height,
   },
 
@@ -39,7 +51,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     position: 'absolute',
-    bottom: 5,
+    bottom: 0,
     width: Dimensions.get('window').width,
     height: 60,
     borderWidth: 1,
@@ -53,10 +65,15 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
 
+  signInText: {
+    fontSize: 25,
+    marginBottom: 10,
+  },
+
   loginContainer: {
     flex: 1,
     borderWidth: 1,
-    borderColor: 'red',
+    // borderColor: 'white',
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
@@ -66,11 +83,11 @@ export const styles = StyleSheet.create({
     flex: 0,
     backgroundColor: 'white',
     borderWidth: 1,
-    borderRadius:30,
-    width: 300,
-    height: 300,
+    borderRadius: 30,
+    width: 250,
+    height: 250,
     textAlign: 'center',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 });

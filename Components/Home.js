@@ -1,4 +1,4 @@
-import { Button, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { styles } from './Styles/Styles';
 import { SideNav } from './SideNav';
 import { BottomNav } from './BottomNav';
@@ -8,11 +8,10 @@ export const Home = ({ navigation }) => {
   const { showSideNav } = useNavigationProvider();
 
   return (
-    <>
-      <View style={styles.HomeContainer}>
-        {showSideNav && <SideNav />}
-        <BottomNav />
-      </View>
-    </>
+    <View style={styles.HomeContainer}>
+      <View style={styles.homeContent}></View>
+      {showSideNav && <SideNav />}
+      <BottomNav />
+    </View>
   );
 };

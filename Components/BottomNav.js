@@ -5,16 +5,15 @@ import { useNavigationProvider } from '../Providers/NavigationProvider';
 import { useNavigation } from '@react-navigation/native';
 
 export const BottomNav = () => {
-  const { toggleSideNav } = useNavigationProvider();
+  const { showSideNav, toggleSideNav } = useNavigationProvider();
+
   const navigation = useNavigation();
 
   const navItems = [
     {
       id: '1',
-      title: (
-        <Ionicons name="chevron-back-circle-outline" size={35} color="white" />
-      ),
-      onPress: toggleSideNav,
+      title: <Ionicons name="person-circle-outline" size={35} color="white" />,
+      onPress: () => navigation.navigate('LogIn'),
     },
     {
       id: '2',
@@ -23,8 +22,18 @@ export const BottomNav = () => {
     },
     {
       id: '3',
-      title: <Ionicons name="person-circle-outline" size={35} color="white" />,
-      onPress: () => navigation.navigate('LogIn'),
+      title: (
+        <Ionicons
+          name={
+            showSideNav
+            ? 'chevron-forward-circle-outline'
+            : 'chevron-back-circle-outline'
+          }
+          size={35}
+          color="white"
+        />
+      ),
+      onPress: toggleSideNav,
     },
   ];
 

@@ -6,6 +6,9 @@ import { NavigationProvider } from '../Providers/NavigationProvider';
 import { BottomNav } from './BottomNav';
 const Stack = createNativeStackNavigator();
 
+//! Ask Jon about if everything component in home and login are considered 
+//! "children" and has access too everything here
+
 export const Pages = () => {
   return (
     <>
