@@ -5,7 +5,7 @@ import { useNavigationProvider } from '../Providers/NavigationProvider';
 import { useNavigation } from '@react-navigation/native';
 
 export const BottomNav = () => {
-  const { showSideNav, toggleSideNav } = useNavigationProvider();
+  const { showSideNav, toggleSideNav ,} = useNavigationProvider();
 
   const navigation = useNavigation();
 

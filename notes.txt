@@ -2,3 +2,5 @@
 
 React Native Navigation - for Expo 
 React Navite Animatable - for animations
+React Icons - Ionicons
+Font Awesome - Icons

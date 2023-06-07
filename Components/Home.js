@@ -3,15 +3,19 @@ import { styles } from './Styles/Styles';
 import { SideNav } from './SideNav';
 import { BottomNav } from './BottomNav';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
+import { TeamPage } from './TeamPage/TeamPage';
 
-export const Home = ({ navigation }) => {
-  const { showSideNav } = useNavigationProvider();
+export const Home = () => {
+  const { showSideNav, showBottomNav , showTeamPage} = useNavigationProvider();
 
   return (
     <View style={styles.HomeContainer}>
-      <View style={styles.homeContent}></View>
+      <View style={styles.homeContent}>
+         {/* Team Page would be rendered by a users team button they click on sideNav */}
+        {showTeamPage && <TeamPage />}
+      </View>
       {showSideNav && <SideNav />}
-      <BottomNav />
+      {showBottomNav && <BottomNav />}
     </View>
   );
 };

@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   homeContent: {
     flex: 1,
     borderWidth: 1,
-    borderColor: 'blue'
+    // borderColor: 'blue'
   },
 
   sideNavContainer: {
@@ -22,7 +22,6 @@ export const styles = StyleSheet.create({
   },
 
   sideNav: {
-    flex: 3,
     backgroundColor: '#141420',
     borderWidth: 2,
     borderColor: 'black',
@@ -33,17 +32,16 @@ export const styles = StyleSheet.create({
   },
 
   sideNavCircle: {
-    width: 50,
-    height: 50,
-    borderWidth: 3,
+    // flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 53,
+    height: 53,
+    borderWidth: 1,
     borderRadius: 25,
-    backgroundColor: 'white',
-    marginTop: 30,
+    backgroundColor: 'black',
+    marginTop: 40,
     marginBottom: 20,
-  },
-
-  navIcon: {
-    textAlign: 'center',
   },
 
   BottomNav: {

@@ -1,45 +1,60 @@
-import {
-  Button,
-  ScrollView,
-  Text,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+import { Image, ImageBackground, ScrollView, Text, View } from 'react-native';
 import { styles } from './Styles/Styles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
+import VGK from '../assets/VGK.png';
+import RAIDERS from '../assets/RAIDERS.png';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faCommentDollar, faHouse } from '@fortawesome/free-solid-svg-icons';
 
 export const SideNav = () => {
-  const { showSideNav } = useNavigationProvider();
+  const { showSideNav, toggleTeamPage } = useNavigationProvider();
 
-  //* Realistically nav icons will be rendered from User Data / Backend
+  //* Realistically nav icons will be rendered based on User Data / Backend
 
   const navItems = [
-    { id: '1', title: '' },
+    {
+      id: '1',
+      title: '',
+      icon: <Ionicons name="chatbubbles-outline" size={32} color="white" />,
+      onPress: '',
+    },
     {
       id: '2',
-      title: <Ionicons name="chatbubbles-outline" size={32} color="green" />,
+      title: '',
+      icon: <FontAwesomeIcon icon={faCommentDollar} size={28} color="white" />,
+      onPress: '',
     },
-    { id: '3', title: '' },
-    { id: '4', title: '' },
-    { id: '5', title: '' },
-    { id: '6', title: '' },
+    { id: '3', title: '', image: VGK, onPress: toggleTeamPage },
+    { id: '4', title: '', image: RAIDERS, onPress: '' },
+    {
+      id: '5',
+      title: '',
+      icon: <FontAwesomeIcon icon={faHouse} size={28} color="white" />,
+      onPress: '',
+    },
   ];
 
   return (
     <>
       <Animatable.View
         animation={'slideInRight'}
-        duration={800}
-        style={{ width: 70, height: '100%', backgroundColor: 'black' }}
+        duration={350}
+        style={{ height: '100%', backgroundColor: 'black' }}
       >
         <View style={styles.sideNav}>
           <ScrollView>
             {navItems.map((item) => (
               <View style={styles.sideNavCircle} key={item.id}>
-                <Text style={styles.navIcon} onPress={''}>
-                  {item.title}
+                <Text onPress={item.onPress}>
+                  {item.icon && item.icon}
+                  {item.image && (
+                    <Image
+                      source={item.image}
+                      style={{ width: 36, height: 36 }}
+                    ></Image>
+                  )}
                 </Text>
               </View>
             ))}
