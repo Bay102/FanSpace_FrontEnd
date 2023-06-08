@@ -6,23 +6,21 @@ import { useNavigationProvider } from '../Providers/NavigationProvider';
 
 import { FanAppHome } from './FanAppHome/FanAppHome';
 import { TeamPage } from './TeamPageComponent/TeamPage';
+import { VegasGoldenKnights } from './TeamPages/VegasGoldenKnights/VegasGoldenKnights';
+import { VegasRaiders } from './TeamPages/VegasRaiders/VegasRaiders';
 
 export const Home = () => {
-  const { showSideNav, showBottomNav, showTeamPage, showFanApp, activePage } =
-    useNavigationProvider();
+  const { activePage, showSideNav, showBottomNav } = useNavigationProvider();
 
   const RenderPage = {
     FanApp: <FanAppHome />,
-    VGK: <TeamPage />,
-    // RAIDERS: '',
+    VGK: <VegasGoldenKnights />,
+    RAIDERS: <VegasRaiders />,
   };
-
 
   return (
     <View style={styles.HomeContainer}>
-      <View style={styles.homeContent}>
-        {RenderPage[activePage]}
-        </View>
+      <View style={styles.homeContent}>{RenderPage[activePage]}</View>
       {showSideNav && <SideNav />}
       {showBottomNav && <BottomNav />}
     </View>

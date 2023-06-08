@@ -9,8 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCommentDollar, faHouse } from '@fortawesome/free-solid-svg-icons';
 
 export const SideNav = () => {
-  const { setActivePage, showSideNav} =
-    useNavigationProvider();
+  const { setActivePage, showSideNav } = useNavigationProvider();
 
   //* Realistically nav icons will be rendered based on User Data / Backend
 
@@ -28,7 +27,12 @@ export const SideNav = () => {
       onPress: '',
     },
     { id: '3', title: '', image: VGK, onPress: () => setActivePage('VGK') },
-    { id: '4', title: '', image: RAIDERS, onPress: '' },
+    {
+      id: '4',
+      title: '',
+      image: RAIDERS,
+      onPress: () => setActivePage('RAIDERS'),
+    },
     {
       id: '5',
       title: '',
@@ -41,7 +45,7 @@ export const SideNav = () => {
     <>
       <Animatable.View
         animation={'slideInRight'}
-        duration={350}
+        duration={550}
         style={{ height: '100%', backgroundColor: 'black' }}
       >
         <View style={styles.sideNav}>
