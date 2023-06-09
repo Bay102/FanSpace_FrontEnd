@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { View } from 'react-native';
 import { styles } from './Styles/Styles';
 import { SideNav } from './SideNav';
@@ -7,11 +8,14 @@ import { useNavigationProvider } from '../Providers/NavigationProvider';
 import { FanAppHome } from './FanAppHome/FanAppHome';
 import { VegasGoldenKnights } from './TeamPages/VegasGoldenKnights/VegasGoldenKnights';
 import { VegasRaiders } from './TeamPages/VegasRaiders/VegasRaiders';
-import { useCallback } from 'react';
 
-import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import { useFonts } from 'expo-font';
 import { Inter_900Black } from '@expo-google-fonts/inter';
+import {
+  ABeeZee_400Regular,
+  ABeeZee_400Regular_Italic,
+} from '@expo-google-fonts/abeezee';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -21,6 +25,8 @@ export const Home = () => {
   //> ////////////////// Font / Splashscreen ///////////////////////
   const [fontsLoaded] = useFonts({
     Inter_900Black,
+    ABeeZee_400Regular,
+    ABeeZee_400Regular_Italic
   });
 
   const onLayoutRootView = useCallback(async () => {

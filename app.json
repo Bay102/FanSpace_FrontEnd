@@ -4,10 +4,10 @@
     "slug": "FanApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/FanAppLogo.png",
+    "icon": "./assets/images/Banner.png",
     "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/images/FanAppLogo.png",
+      "image": "./assets/images/Banner.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

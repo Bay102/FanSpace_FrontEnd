@@ -3,8 +3,8 @@ import { styles } from './Styles/Styles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
-import VGK from '../assets/VGK.png';
-import RAIDERS from '../assets/RAIDERS.png';
+import VGK from '../assets/Images/VGK.png';
+import RAIDERS from '../assets/Images/RAIDERS.png';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCommentDollar, faHouse } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
@@ -12,7 +12,7 @@ import { useState } from 'react';
 export const SideNav = () => {
   const { setActivePage } = useNavigationProvider();
 
-  //* Realistically nav icons will be rendered based on User Data / Backend
+  //* Realistically nav icons/channels will be rendered based on User Data / Backend
   const [userChannels, setUserChannels] = useState(null)
   //* 
 
@@ -48,7 +48,7 @@ export const SideNav = () => {
     <>
       <Animatable.View
         animation={'slideInRight'}
-        duration={550}
+        duration={300}
         style={{ height: '100%', backgroundColor: 'black' }}
       >
         <View style={styles.sideNav}>

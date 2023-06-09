@@ -19,23 +19,26 @@ export const FanAppStyles = StyleSheet.create({
     width: '100%',
     height: 120,
     borderWidth: 1,
-    borderColor: 'red',
+    // borderColor: 'red',
   },
   headerText: {
-    borderWidth: 1,
+    fontFamily: 'ABeeZee_400Regular',
+    fontSize: 30,
   },
 
   buttonsContainer: {
     width: '100%',
     height: 100,
     borderWidth: 1,
-    borderColor: 'yellow',
+    // borderColor: 'yellow',
   },
 
-  channels: {
+  channelsContainer: {
     width: '100%',
     height: 800,
     borderWidth: 2,
-    borderColor: 'blue',
+    // borderColor: 'blue',
+    alignItems: 'center',
+    // justifyContent: 'flex-start'
   },
 });

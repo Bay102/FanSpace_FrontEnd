@@ -33,7 +33,7 @@ export const Login = ({ navigation }) => {
           placeholder="Password"
         />
       </View>
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+      {/* <Button title="Go to Home" onPress={() => navigation.navigate('Home')} /> */}
     </View>
   );
 };

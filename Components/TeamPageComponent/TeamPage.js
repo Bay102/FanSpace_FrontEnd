@@ -8,7 +8,7 @@ export const TeamPage = ({teamName}) => {
         <Text style={teamStyles.headerText}>{teamName}</Text>
       </View>
       <View style={teamStyles.buttonsContainer}>
-        <Button title="im a button" onPress={''} />
+        {/* <Button title="im a button" onPress={''} /> */}
       </View>
 
       <View style={teamStyles.channels}>

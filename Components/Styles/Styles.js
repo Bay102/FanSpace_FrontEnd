@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
 
   sideNav: {
-    backgroundColor: '#141420',
+    backgroundColor: '#b68f45',
     borderWidth: 2,
     borderColor: 'black',
     alignItems: 'center',

@@ -1,6 +1,7 @@
 import { Button, ScrollView, Text, View } from 'react-native';
 import { FanAppStyles } from './FanAppStyles';
-// import { Inter_900Black } from '@expo-google-fonts/inter';
+
+
 
 export const FanAppHome = () => {
  
@@ -11,11 +12,11 @@ export const FanAppHome = () => {
           <Text style={FanAppStyles.headerText}>FanApp!</Text>
         </View>
         <View style={FanAppStyles.buttonsContainer}>
-          <Button title="im a button" onPress={''} />
+          {/* <Button title="im a button" onPress={''} /> */}
         </View>
-        <View style={FanAppStyles.channels}>
+        <View style={FanAppStyles.channelsContainer}>
           <ScrollView>
-            <Text style={{fontFamily: "Inter_900Black"}}>Hello</Text>
+            <Text>Hello</Text>
           </ScrollView>
         </View>
       </View>
