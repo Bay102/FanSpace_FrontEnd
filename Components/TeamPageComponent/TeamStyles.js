@@ -23,6 +23,7 @@ export const teamStyles = StyleSheet.create({
   },
   headerText: {
     borderWidth: 1,
+    fontFamily: 'Cochin',
   },
 
   buttonsContainer: {

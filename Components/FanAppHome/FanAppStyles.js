@@ -17,7 +17,7 @@ export const FanAppStyles = StyleSheet.create({
     alignItems: 'center',
     textAlign: 'center',
     width: '100%',
-     height: 120,
+    height: 120,
     borderWidth: 1,
     borderColor: 'red',
   },
@@ -26,15 +26,13 @@ export const FanAppStyles = StyleSheet.create({
   },
 
   buttonsContainer: {
-   //  flex: 1,
     width: '100%',
-     height: 100,
+    height: 100,
     borderWidth: 1,
-    borderColor: 'yellow'
+    borderColor: 'yellow',
   },
 
   channels: {
-   //  flex: 4,
     width: '100%',
     height: 800,
     borderWidth: 2,

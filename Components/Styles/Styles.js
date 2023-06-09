@@ -32,16 +32,17 @@ export const styles = StyleSheet.create({
   },
 
   sideNavCircle: {
-    // flex: 1,
+    flex: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 55,
-    height: 55,
+    width: 50,
+    height: 50,
     borderWidth: 1,
+    borderColor: 'black',
     borderRadius: 25,
     backgroundColor: 'black',
     marginTop: 40,
-    marginBottom: 20,
+    marginBottom: 0,
   },
 
   BottomNav: {

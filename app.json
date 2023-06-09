@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "FirstNativeApp",
-    "slug": "FirstNativeApp",
+    "name": "FanApp",
+    "slug": "FanApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/images/FanAppLogo.png",
+    "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/FanAppLogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/FanAppLogo.png",
         "backgroundColor": "#ffffff"
       }
     },
