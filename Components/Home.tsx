@@ -1,3 +1,4 @@
+import React from 'react';
 import { useCallback } from 'react';
 import { View } from 'react-native';
 import { styles } from './Styles/Styles';
@@ -26,7 +27,7 @@ export const Home = () => {
   const [fontsLoaded] = useFonts({
     Inter_900Black,
     ABeeZee_400Regular,
-    ABeeZee_400Regular_Italic
+    ABeeZee_400Regular_Italic,
   });
 
   const onLayoutRootView = useCallback(async () => {

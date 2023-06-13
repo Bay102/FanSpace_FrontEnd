@@ -1,8 +1,10 @@
 import { createContext, useContext, useState } from 'react';
+import React from 'react';
+import { NavigationProviderTypes } from '../types';
 
-const NavigationContext = createContext();
+const NavigationContext = createContext({} as NavigationProviderTypes);
 
-export const NavigationProvider = ({ children }) => {
+export const NavigationProvider = ({ children }: { children: JSX.Element }) => {
   const [showSideNav, setShowSideNav] = useState(true);
   const [showBottomNav, setShowBottomNav] = useState(true);
 

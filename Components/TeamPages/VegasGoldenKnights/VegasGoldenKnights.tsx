@@ -1,3 +1,4 @@
+import React from 'react';
 import { TeamPage } from '../../TeamPageComponent/TeamPage';
 
 export const VegasGoldenKnights = () => {
