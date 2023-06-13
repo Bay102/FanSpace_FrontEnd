@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { BottomNavItemsTypes, NavItem } from '../types';
+import { NavItem } from '../types';
 
 export const BottomNav = () => {
   const { showSideNav, toggleSideNav } = useNavigationProvider();
@@ -15,7 +15,7 @@ export const BottomNav = () => {
     {
       id: 1,
       title: <Ionicons name="person-circle-outline" size={35} color="white" />,
-      onPress: () => navigation.navigate('LogIn'),
+      onPress: () => navigation.navigate('LogIn' as never),
     },
     {
       id: 2,

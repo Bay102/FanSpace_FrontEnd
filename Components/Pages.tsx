@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from './Home';
 import { Login } from './LogIn';
 import { NavigationProvider } from '../Providers/NavigationProvider';
-import { BottomNav } from './BottomNav';
 const Stack = createNativeStackNavigator();
 
 //! Ask Jon about if everything component in home and login are considered

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, ScrollView, Text, View } from 'react-native';
 import { teamStyles } from './TeamStyles';
+import { TeamPageProps } from '../../types';
 
-export const TeamPage = ({ teamName }: any) => {
+export const TeamPage: React.FC<TeamPageProps> = ({ teamName }) => {
   return (
     <View style={teamStyles.container}>
       <View style={teamStyles.headerContainer}>
