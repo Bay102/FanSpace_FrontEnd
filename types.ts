@@ -16,3 +16,7 @@ export type NavItem = {
 export type TeamPageProps = {
    teamName: string,
 }
+
+// export type RenderPagesProps = {
+//    fanApp: JSX.Element
+// }

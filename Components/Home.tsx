@@ -41,7 +41,7 @@ export const Home = () => {
   }
   //> //////////////////////////////////////////////////*
 
-  const RenderPage = {
+  const RenderPage: any = {
     FanApp: <FanAppHome />,
     VGK: <VegasGoldenKnights />,
     RAIDERS: <VegasRaiders />,

@@ -1,8 +1,9 @@
+import React from 'react';
 import { Button, Text, TextInput, TouchableHighlight } from 'react-native';
 import { View } from 'react-native-animatable';
 import { styles } from './Styles/Styles';
 
-export const Login = ({ navigation }) => {
+export const Login = () => {
   return (
     <View style={styles.loginContainer}>
       <View style={styles.inputsContainer}>
@@ -16,8 +17,8 @@ export const Login = ({ navigation }) => {
             borderColor: 'gray',
             borderWidth: 1,
           }}
-          onChangeText={null}
-          value={null}
+          // onChangeText={''}
+          // value={''}
           placeholder="Username"
         />
         <TextInput
@@ -28,8 +29,8 @@ export const Login = ({ navigation }) => {
             borderColor: 'gray',
             borderWidth: 1,
           }}
-          onChangeText={null}
-          value={null}
+          // onChangeText={null}
+          // value={null}
           placeholder="Password"
         />
       </View>
