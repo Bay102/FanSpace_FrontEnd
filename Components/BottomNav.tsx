@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import { styles } from './Styles/Styles';
+import { styles } from './Styles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
 import { useNavigation } from '@react-navigation/native';

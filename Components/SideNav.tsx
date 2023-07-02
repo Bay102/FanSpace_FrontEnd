@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, ImageBackground, ScrollView, Text, View } from 'react-native';
-import { styles } from './Styles/Styles';
+import { styles } from './Styles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
 import { useNavigationProvider } from '../Providers/NavigationProvider';

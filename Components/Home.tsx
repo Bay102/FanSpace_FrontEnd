@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCallback } from 'react';
 import { View } from 'react-native';
-import { styles } from './Styles/Styles';
+import { styles } from './Styles';
 import { SideNav } from './SideNav';
 import { BottomNav } from './BottomNav';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
@@ -17,13 +17,14 @@ import {
   ABeeZee_400Regular,
   ABeeZee_400Regular_Italic,
 } from '@expo-google-fonts/abeezee';
+import { PagesProps } from '../types';
 
 SplashScreen.preventAutoHideAsync();
 
 export const Home = () => {
   const { activePage, showSideNav, showBottomNav } = useNavigationProvider();
 
-  //> ////////////////// Font / Splashscreen ///////////////////////
+  //* ///// Font / Splashscreen /////
   const [fontsLoaded] = useFonts({
     Inter_900Black,
     ABeeZee_400Regular,
@@ -39,9 +40,9 @@ export const Home = () => {
   if (!fontsLoaded) {
     return null;
   }
-  //> //////////////////////////////////////////////////*
+  //* ///////////////////////////////////
 
-  const RenderPage: any = {
+  const RenderPage: PagesProps = {
     FanApp: <FanAppHome />,
     VGK: <VegasGoldenKnights />,
     RAIDERS: <VegasRaiders />,
