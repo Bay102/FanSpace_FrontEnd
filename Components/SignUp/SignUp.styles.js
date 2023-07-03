@@ -20,20 +20,20 @@ export const SignUpStyles = StyleSheet.create({
     backgroundColor: 'white',
     borderWidth: 1,
     borderRadius: 30,
-    width: 250,
-    height: 350,
+    width: 300,
+    height: 400,
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 300
   },
 
   inputs: {
-    width: 200,
+    width: 230,
     height: 40,
-    marginBottom: 10,
+    marginBottom: 15,
     borderRadius: 5,
     borderWidth: 1,
-
   },
 
   submit: {
@@ -42,5 +42,6 @@ export const SignUpStyles = StyleSheet.create({
    padding: 6,
    backgroundColor: 'black',
    color: 'white',
+   marginTop: 10
   }
 });

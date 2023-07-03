@@ -1,3 +1,9 @@
+export type AuthTypes = {
+ user: string;
+ setUser: React.Dispatch<React.SetStateAction<string>>
+}
+
+
 export type NavigationProviderTypes = {
   showSideNav: boolean;
   toggleSideNav: () => void;
@@ -25,3 +31,6 @@ export type NewUser = {
    [key: string]: string
 } 
 
+export type LoginParams = {
+  [key: string]: string
+}

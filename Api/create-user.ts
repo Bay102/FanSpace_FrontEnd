@@ -6,7 +6,7 @@ export const createUser = async ({ name, email, password }: NewUser) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
+      Accept: 'application/json',
     },
     body: JSON.stringify({
       name,
@@ -15,11 +15,9 @@ export const createUser = async ({ name, email, password }: NewUser) => {
     }),
   }).then((response) => {
     if (!response.ok) {
-      throw new Error('Username Already Exists');
+      if (response.status === 406) throw new Error('Email in Use');
     }
+
     return response.json();
-  }) 
-}; 
-
-
-// 192.168.4.28:8080
+  });
+};
