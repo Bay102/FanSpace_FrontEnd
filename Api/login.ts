@@ -2,7 +2,7 @@ import { LoginParams } from '../types';
 import { API_CONFIG } from './api-config';
 
 export const login = async ({ email, password }: LoginParams) => {
- const user = await fetch(`${API_CONFIG.baseUrl}/user/login`, {
+  const user = await fetch(`${API_CONFIG.baseUrl}/user/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ export const login = async ({ email, password }: LoginParams) => {
   }).then((response) => {
     if (!response.ok) {
       if (response.status === 404) {
-        throw new Error('Email Does not Exist');
+        throw new Error('Invalid Email');
       }
       if (response.status === 401) {
         throw new Error('Incorrect Password');
@@ -22,5 +22,5 @@ export const login = async ({ email, password }: LoginParams) => {
     }
     return response.json();
   });
-  return user
+  return user;
 };

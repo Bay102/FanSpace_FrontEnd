@@ -1,8 +1,15 @@
 export type AuthTypes = {
- user: string;
- setUser: React.Dispatch<React.SetStateAction<string>>
+ user: User | null;
+ setUser: React.Dispatch<React.SetStateAction<User | null >> 
 }
 
+export type User = {
+  id: number;
+  name: string;
+  email: string;
+  passwordHash: string,
+  pages: any     //! FIX ANY
+}
 
 export type NavigationProviderTypes = {
   showSideNav: boolean;

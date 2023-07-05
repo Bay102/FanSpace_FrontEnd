@@ -6,17 +6,18 @@ import { login } from '../../Api/login';
 import { useAuthProvider } from '../../Providers/AuthProvider';
 import Toast from 'react-native-root-toast';
 
-export const Login = ({ navigation }: any) => {
+export const Login = ({ navigation } : any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const { setUser } = useAuthProvider();
 
   const handleLogin = async () => {
+    if (!email.length || !password.length) {
+      throw new Error('Inputs Required');
+    }
+    
     try {
-      if (!email.length || !password.length) {
-        throw new Error('Fields Are Required');
-      }
       await login({ email, password }).then((user) => setUser(user));
 
       Toast.show('LogIn Success', {
@@ -25,12 +26,12 @@ export const Login = ({ navigation }: any) => {
         position: 385,
       });
 
-      navigation.navigate('Home')
+      navigation.navigate('Home');
     } catch (e) {
       Toast.show(`${e}`, {
         duration: Toast.durations.LONG,
         backgroundColor: 'red',
-        position: 385,
+        position: 225,
       });
     }
   };
@@ -38,29 +39,21 @@ export const Login = ({ navigation }: any) => {
   return (
     <View style={LoginStyles.loginContainer}>
       <View style={LoginStyles.inputsContainer}>
-        <Text style={LoginStyles.signInText}>Sign In</Text>
+        {/* <Text style={LoginStyles.signInText}>Sign In</Text> */}
+        <Text>Email:</Text>
         <TextInput
-          style={{
-            width: 200,
-            height: 40,
-            marginBottom: 10,
-            borderRadius: 5,
-            borderWidth: 1,
-          }}
+          style={LoginStyles.input}
           onChangeText={setEmail}
           value={email}
           placeholder="Email"
         />
+        <Text>Password:</Text>
         <TextInput
-          style={{
-            width: 200,
-            height: 40,
-            borderRadius: 5,
-            borderWidth: 1,
-          }}
+          style={LoginStyles.input}
           value={password}
           onChangeText={setPassword}
           placeholder="Password"
+          returnKeyType="go"
         />
         <TouchableOpacity style={LoginStyles.submit} onPress={handleLogin}>
           <Text style={{ color: 'white' }}>Login</Text>

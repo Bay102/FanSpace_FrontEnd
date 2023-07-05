@@ -1,14 +1,13 @@
 import React, { createContext, useContext, useState } from "react";
-import { AuthTypes } from "../types";
+import { AuthTypes, User } from "../types";
 
 const AuthContext = createContext({} as AuthTypes);
 
 export const AuthProvider = ({ children }: { children: JSX.Element }) => {
-   const [user, setUser] = useState('');
-   
-   console.log(user);
-   
 
+   const [user, setUser] = useState<User | null>(null);
+   
+   
 
    return(
       <AuthContext.Provider value={{user, setUser}}>

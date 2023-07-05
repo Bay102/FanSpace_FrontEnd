@@ -3,7 +3,6 @@ type API_BASE = {
  };
  
  export const API_CONFIG: API_BASE = {
-   baseUrl: 'http://192.168.4.28:8080',
+   baseUrl: 'http://192.168.4.28:8080',    //! React Native
  };
 
-//! need to figure out what port react Native Expo is running on 

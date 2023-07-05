@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SignUpStyles } from './SignUp.styles';
 import { createUser } from '../../Api/create-user';
-import { getUsers } from '../../Api/get-users';
 import Toast from 'react-native-root-toast';
 
 export const SignUp = ({ navigation }: any) => {
@@ -11,7 +10,6 @@ export const SignUp = ({ navigation }: any) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  // const [error, setError] = useState('');
   const matchPasswords = password === confirmPassword ? true : false;
 
   const handleSignUp = async () => {
@@ -28,17 +26,17 @@ export const SignUp = ({ navigation }: any) => {
 
       await createUser({ name, email, password });
 
-      Toast.show('Account Created', {
-        duration: Toast.durations.LONG,
-        backgroundColor: 'green',
-        position: 385,
-      });
-
       setEmail('');
       setName('');
       setPassword('');
       setConfirmPassword('');
       navigation.navigate('login');
+
+      Toast.show('Account Created', {
+        duration: Toast.durations.LONG,
+        backgroundColor: 'green',
+        position: 385,
+      });
     } catch (e) {
       Toast.show(`${e}`, {
         duration: Toast.durations.LONG,

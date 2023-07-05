@@ -14,6 +14,7 @@ export const LoginStyles = StyleSheet.create({
       backgroundColor: 'black',
       justifyContent: 'center',
       alignItems: 'center',
+
     },
   
     inputsContainer: {
@@ -22,11 +23,20 @@ export const LoginStyles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 30,
       width: 250,
-      height: 250,
+      height: 300,
       textAlign: 'center',
       justifyContent: 'center',
       alignItems: 'center',
+      marginBottom: 200
     },
+
+   input: {
+    width: 200,
+    height: 40,
+    marginBottom: 10,
+    borderRadius: 5,
+    borderWidth: 1,
+   },
 
     submit: {
       borderWidth: 1,
