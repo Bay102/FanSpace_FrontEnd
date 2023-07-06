@@ -42,15 +42,15 @@ export const Home = () => {
   }
   //* ///////////////////////////////////
 
-  const RenderPage: PagesProps = {
+  const RenderChannel: PagesProps = {
     FanApp: <FanAppHome />,
     VGK: <VegasGoldenKnights />,
-    RAIDERS: <VegasRaiders />,
+    Raiders: <VegasRaiders />,
   };
 
   return (
     <View style={styles.HomeContainer} onLayout={onLayoutRootView}>
-      <View style={styles.homeContent}>{RenderPage[activePage]}</View>
+      <View style={styles.homeContent}>{RenderChannel[activePage]}</View>
       {showSideNav && <SideNav />}
       {showBottomNav && <BottomNav />}
     </View>

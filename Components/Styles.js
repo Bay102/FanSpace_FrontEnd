@@ -29,6 +29,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 65,
     height: Dimensions.get('window').height,
+    color: 'white'
   },
 
   sideNavCircle: {
@@ -43,6 +44,12 @@ export const styles = StyleSheet.create({
     backgroundColor: 'black',
     marginTop: 40,
     marginBottom: 0,
+  },
+
+  name: {
+    color: 'white',
+    fontSize: 12
+    
   },
 
   BottomNav: {

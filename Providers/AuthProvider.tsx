@@ -6,7 +6,7 @@ const AuthContext = createContext({} as AuthTypes);
 export const AuthProvider = ({ children }: { children: JSX.Element }) => {
 
    const [user, setUser] = useState<User | null>(null);
-   
+   // console.log(user)
    
 
    return(

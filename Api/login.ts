@@ -2,7 +2,7 @@ import { LoginParams } from '../types';
 import { API_CONFIG } from './api-config';
 
 export const login = async ({ email, password }: LoginParams) => {
-  const user = await fetch(`${API_CONFIG.baseUrl}/user/login`, {
+  return await fetch(`${API_CONFIG.baseUrl}/user/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -22,5 +22,4 @@ export const login = async ({ email, password }: LoginParams) => {
     }
     return response.json();
   });
-  return user;
 };

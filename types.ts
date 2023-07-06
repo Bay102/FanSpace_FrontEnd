@@ -1,15 +1,21 @@
 export type AuthTypes = {
- user: User | null;
- setUser: React.Dispatch<React.SetStateAction<User | null >> 
-}
+  user: User | null;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+};
+
+export type ChannelsTypes = {
+  allChannels: Channel[];
+  usersChannels: Channel[] | null;
+  setUsersChannels: React.Dispatch<React.SetStateAction<Channel[] | null>>;
+};
 
 export type User = {
   id: number;
   name: string;
   email: string;
-  passwordHash: string,
-  pages: any     //! FIX ANY
-}
+  passwordHash: string;
+  channels?: Channel[];
+};
 
 export type NavigationProviderTypes = {
   showSideNav: boolean;
@@ -22,22 +28,27 @@ export type NavigationProviderTypes = {
 
 export type NavItem = {
   id: number;
-  title: JSX.Element;
+  name: JSX.Element;
+  image: string;
   onPress: () => void;
+};
+
+export type PagesProps = {
+  [key: string]: JSX.Element;
 };
 
 export type TeamPageProps = {
   teamName: string;
 };
 
-export type PagesProps = {
-  [key: string]: string | JSX.Element;
+export type Channel = {
+  [key: string | number]: string | number;
 };
 
 export type NewUser = {
-   [key: string]: string
-} 
+  [key: string]: string;
+};
 
 export type LoginParams = {
-  [key: string]: string
-}
+  [key: string]: string;
+};

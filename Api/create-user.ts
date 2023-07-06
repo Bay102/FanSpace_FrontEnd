@@ -2,7 +2,7 @@ import { NewUser } from '../types';
 import { API_CONFIG } from './api-config';
 
 export const createUser = async ({ name, email, password }: NewUser) => {
-  await fetch(`${API_CONFIG.baseUrl}/user/create`, {
+  return await fetch(`${API_CONFIG.baseUrl}/user/create`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -5,10 +5,7 @@ export const getUsers = () => {
     if (!response.ok) {
       throw new Error('Username Already Exists');
     }
-    console.log(response);
 
     return response.json();
   });
 };
-
-

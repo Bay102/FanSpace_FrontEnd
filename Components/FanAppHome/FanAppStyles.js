@@ -26,14 +26,15 @@ export const FanAppStyles = StyleSheet.create({
     fontSize: 30,
   },
 
-  buttonsContainer: {
+  channelsContainer: {
     width: '100%',
     height: 100,
     borderWidth: 1,
     // borderColor: 'yellow',
+    justifyContent: 'center'
   },
 
-  channelsContainer: {
+  TBDcontainer: {
     width: '100%',
     height: 800,
     borderWidth: 2,
@@ -41,4 +42,27 @@ export const FanAppStyles = StyleSheet.create({
     alignItems: 'center',
     // justifyContent: 'flex-start'
   },
+
+  channels: {
+    // flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+
+  },
+
+  channelCircle: {
+    width: 70,
+    height: 70,
+    borderRadius: 100,
+    borderWidth: 2,
+    backgroundColor: 'lightblue',
+    justifyContent: 'center',
+    alignItems: 'center',
+    display: 'flex',
+    
+  },
+
+  circleText : {
+    textAlign: 'center'
+  }
 });

@@ -6,19 +6,22 @@ import { login } from '../../Api/login';
 import { useAuthProvider } from '../../Providers/AuthProvider';
 import Toast from 'react-native-root-toast';
 
-export const Login = ({ navigation } : any) => {
+export const Login = ({ navigation }: any) => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { setUser } = useAuthProvider();
+  const { user, setUser } = useAuthProvider();
 
   const handleLogin = async () => {
-    if (!email.length || !password.length) {
-      throw new Error('Inputs Required');
-    }
-    
+    // if (user) { setUser(null) }
     try {
-      await login({ email, password }).then((user) => setUser(user));
+      if (!email|| !password) {
+        throw new Error('Inputs Required');
+      }
+
+      await login({ email, password })
+      .then((user) => setUser(user));
 
       Toast.show('LogIn Success', {
         duration: Toast.durations.LONG,
@@ -31,7 +34,7 @@ export const Login = ({ navigation } : any) => {
       Toast.show(`${e}`, {
         duration: Toast.durations.LONG,
         backgroundColor: 'red',
-        position: 225,
+        position: 190,
       });
     }
   };

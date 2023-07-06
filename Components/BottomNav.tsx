@@ -15,7 +15,7 @@ export const BottomNav = () => {
     {
       id: 1,
       title: <Ionicons name="person-circle-outline" size={35} color="white" />,
-      onPress: () => navigation.navigate('login' as never),
+      onPress: () => navigation.navigate('Login' as never),
     },
     {
       id: 2,
