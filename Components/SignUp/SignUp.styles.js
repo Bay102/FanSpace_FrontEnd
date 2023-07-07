@@ -31,9 +31,10 @@ export const SignUpStyles = StyleSheet.create({
   inputs: {
     width: 230,
     height: 40,
-    marginBottom: 15,
+    marginBottom: 20,
     borderRadius: 5,
     borderWidth: 1,
+    borderTopWidth: 0
   },
 
   submit: {

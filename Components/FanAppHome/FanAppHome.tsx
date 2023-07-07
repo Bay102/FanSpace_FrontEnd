@@ -15,7 +15,7 @@ export const FanAppHome = () => {
   return (
     <View style={FanAppStyles.container}>
       <View style={FanAppStyles.headerContainer}>
-        <Text style={FanAppStyles.headerText}>FanApp!</Text>
+        <Text style={FanAppStyles.headerText}>FAN SPACE</Text>
       </View>
       <View style={FanAppStyles.channelsContainer}>
         <View style={FanAppStyles.channels}>

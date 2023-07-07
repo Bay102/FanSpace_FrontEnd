@@ -9,24 +9,24 @@ import { useState } from 'react';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
 import { useChannelsProvider } from '../Providers/ChannelsProvider';
 import { useAuthProvider } from '../Providers/AuthProvider';
-import { Channel, NavItem } from '../types';
+import { NavItem } from '../types';
 
 export const SideNav = () => {
   const { user } = useAuthProvider();
   const { setActivePage } = useNavigationProvider();
   const { usersChannels } = useChannelsProvider();
 
-  const [userChans, setUserChans] = useState<any>([]);
+  const [navChannels, setNavChannels] = useState<any>([]);
 
   useEffect(() => {
     if (user) {
-      const channels = usersChannels?.map((channel) => ({
+      const channelIcon = usersChannels?.map((channel) => ({
         id: channel.id,
         name: channel.name,
         // image: '',
         onPress: () => setActivePage(`${channel.name}`),
       }));
-      setUserChans(channels);
+      setNavChannels(channelIcon);
     }
   }, [usersChannels]);
 
@@ -43,7 +43,6 @@ export const SideNav = () => {
       image: <FontAwesomeIcon icon={faCommentDollar} size={25} color="white" />,
       onPress: () => setActivePage('FanApp'),
     },
-
     {
       id: '5000',
       name: 'fanapp',
@@ -53,28 +52,28 @@ export const SideNav = () => {
   ];
 
   return (
-    <>
-      <Animatable.View
-        animation={'slideInRight'}
-        duration={300}
-        style={{ height: '100%', backgroundColor: 'black' }}
-      >
-        <View style={styles.sideNav}>
-          <ScrollView>
-            {navItems.map((channel) => (
-              <View style={styles.sideNavCircle} key={channel.id}>
-                <Text onPress={channel.onPress}>{channel.image && channel.image}</Text>
+    <Animatable.View
+      animation={'slideInRight'}
+      duration={300}
+      style={{ height: '100%', backgroundColor: 'black' }}
+    >
+      <View style={styles.sideNav}>
+        <ScrollView>
+          {navItems.map((channel) => (
+            <View style={styles.channelCircle} key={channel.id}>
+              <Text onPress={channel.onPress}>{channel.image && channel.image}</Text>
+            </View>
+          ))}
+          {navChannels &&
+            navChannels.map((channel: NavItem) => (
+              <View style={styles.channelCircle} key={channel.id}>
+                <Text onPress={channel.onPress} style={styles.channelName}>
+                  {channel.name}
+                </Text>
               </View>
             ))}
-            {userChans &&
-              userChans.map((channel: NavItem) => (
-                <View style={styles.sideNavCircle} key={channel.id}>
-                  <Text onPress={channel.onPress} style={styles.name}>{channel.name}</Text>
-                </View>
-              ))}
-          </ScrollView>
-        </View>
-      </Animatable.View>
-    </>
+        </ScrollView>
+      </View>
+    </Animatable.View>
   );
 };

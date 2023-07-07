@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
   homeContent: {
     flex: 1,
     borderWidth: 1,
-    // borderColor: 'blue'
   },
 
   sideNavContainer: {
@@ -27,12 +26,12 @@ export const styles = StyleSheet.create({
     borderColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 65,
+    width: 58,
     height: Dimensions.get('window').height,
-    color: 'white'
+    color: 'white',
   },
 
-  sideNavCircle: {
+  channelCircle: {
     flex: 0,
     justifyContent: 'center',
     alignItems: 'center',
@@ -46,10 +45,9 @@ export const styles = StyleSheet.create({
     marginBottom: 0,
   },
 
-  name: {
+  channelName: {
     color: 'white',
-    fontSize: 12
-    
+    fontSize: 11,
   },
 
   BottomNav: {
@@ -70,5 +68,4 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
-
 });

@@ -30,18 +30,20 @@ export const SignUp = ({ navigation }: any) => {
       setName('');
       setPassword('');
       setConfirmPassword('');
-      navigation.navigate('login');
+      navigation.navigate('Login');
 
       Toast.show('Account Created', {
         duration: Toast.durations.LONG,
         backgroundColor: 'green',
-        position: 385,
+        position: 205,
       });
     } catch (e) {
       Toast.show(`${e}`, {
         duration: Toast.durations.LONG,
-        backgroundColor: 'red',
-        position: 385,
+        backgroundColor: '#f04545',
+        position: 130,
+        shadowColor: 'black',
+        textColor: 'black',
       });
     }
   };
@@ -52,35 +54,39 @@ export const SignUp = ({ navigation }: any) => {
     <View style={SignUpStyles.Container}>
       <View style={SignUpStyles.inputsContainer}>
         {/* <Text style={SignUpStyles.header}>Sign Up</Text> */}
-        <Text>Email</Text>
+
         <TextInput
           style={SignUpStyles.inputs}
           onChangeText={setEmail}
           value={email}
           keyboardType="email-address"
-          // placeholder="Email"
+          placeholder="Email"
+          placeholderTextColor={'gray'}
         />
-        <Text>Name</Text>
+
         <TextInput
           style={SignUpStyles.inputs}
           value={name}
           onChangeText={setName}
-          // placeholder="Name"
+          placeholder="Name"
+          placeholderTextColor={'gray'}
         />
-        <Text>Password</Text>
+
         <TextInput
           style={SignUpStyles.inputs}
           value={password}
           onChangeText={setPassword}
-          // placeholder="Password"
+          placeholder="Password"
+          placeholderTextColor={'gray'}
         />
-        <Text>Confirm Password</Text>
+
         <TextInput
           style={SignUpStyles.inputs}
           value={confirmPassword}
           onChangeText={setConfirmPassword}
           returnKeyType="done"
-          // placeholder="Confirm Password"
+          placeholder="Confirm Password"
+          placeholderTextColor={'gray'}
         />
         <TouchableOpacity style={SignUpStyles.submit} onPress={handleSignUp}>
           <Text style={{ color: 'white' }}>Create Account</Text>

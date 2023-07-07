@@ -18,10 +18,12 @@ import {
   ABeeZee_400Regular_Italic,
 } from '@expo-google-fonts/abeezee';
 import { PagesProps } from '../types';
+import { useAuthProvider } from '../Providers/AuthProvider';
 
 SplashScreen.preventAutoHideAsync();
 
 export const Home = () => {
+  const {user} = useAuthProvider()
   const { activePage, showSideNav, showBottomNav } = useNavigationProvider();
 
   //* ///// Font / Splashscreen /////
@@ -51,7 +53,7 @@ export const Home = () => {
   return (
     <View style={styles.HomeContainer} onLayout={onLayoutRootView}>
       <View style={styles.homeContent}>{RenderChannel[activePage]}</View>
-      {showSideNav && <SideNav />}
+      {user && showSideNav && <SideNav />}
       {showBottomNav && <BottomNav />}
     </View>
   );
