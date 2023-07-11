@@ -1,6 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 export const FanAppStyles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+    backgroundColor: '#2c303b',
+    borderWidth: 2,
+  },
   container: {
     flex: 1,
     justifyContent: 'flex-start',
@@ -28,7 +36,7 @@ export const FanAppStyles = StyleSheet.create({
   },
 
   nameText: {
-    fontSize: 15
+    fontSize: 15,
   },
 
   channelsContainer: {
@@ -36,7 +44,7 @@ export const FanAppStyles = StyleSheet.create({
     height: 100,
     borderWidth: 1,
     // borderColor: 'yellow',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 
   TBDcontainer: {
@@ -52,7 +60,6 @@ export const FanAppStyles = StyleSheet.create({
     // flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-
   },
 
   channelCircle: {
@@ -64,10 +71,9 @@ export const FanAppStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
-    
   },
 
-  circleText : {
-    textAlign: 'center'
-  }
+  circleText: {
+    textAlign: 'center',
+  },
 });

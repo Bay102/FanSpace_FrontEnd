@@ -1,6 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 export const ChannelStyles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+    backgroundColor: '#2c303b',
+    borderWidth: 2,
+  },
+
   container: {
     flex: 1,
     justifyContent: 'flex-start',

@@ -48,7 +48,8 @@ export const SideNav = () => {
       id: '3000',
       name: 'fanapp',
       image: <FontAwesomeIcon icon={faHouse} size={25} color="white" />,
-      onPress: () => setActivePage('FanApp'),
+      // onPress: () => setActivePage('FanApp'),
+      onPress: () => navigation.navigate('FanSpaceHome'),
     },
   ];
 

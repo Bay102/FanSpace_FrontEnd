@@ -26,23 +26,23 @@ export const Home = () => {
   const { user } = useAuthProvider();
   const { activePage, showSideNav, showBottomNav } = useNavigationProvider();
 
-  //* ///// Font / Splash-Screen /////
-  const [fontsLoaded] = useFonts({
-    Inter_900Black,
-    ABeeZee_400Regular,
-    ABeeZee_400Regular_Italic,
-  });
+  // //* ///// Font / Splash-Screen /////
+  // const [fontsLoaded] = useFonts({
+  //   Inter_900Black,
+  //   ABeeZee_400Regular,
+  //   ABeeZee_400Regular_Italic,
+  // });
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
+  // const onLayoutRootView = useCallback(async () => {
+  //   if (fontsLoaded) {
+  //     await SplashScreen.hideAsync();
+  //   }
+  // }, [fontsLoaded]);
 
-  if (!fontsLoaded) {
-    return null;
-  }
-  //* ///////////////////////////////////
+  // if (!fontsLoaded) {
+  //   return null;
+  // }
+  // //* ///////////////////////////////////
 
   //* render default components here,
   const RenderChannel: PagesProps = {

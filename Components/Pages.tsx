@@ -10,10 +10,12 @@ import { UserProvider } from '../Providers/UserProvider';
 import { ChannelsProvider } from '../Providers/ChannelsProvider';
 import { UserProfile } from './UserProfile/UserProfile';
 import { Channel } from './ChannelPage/Channel';
+import { FanAppHome } from './FanAppHome/FanAppHome';
 
 const Stack = createNativeStackNavigator();
 
 export const Pages = () => {
+  
   return (
     <>
       <NavigationProvider>
@@ -22,10 +24,15 @@ export const Pages = () => {
             <ChannelsProvider>
               <NavigationContainer>
                 <Stack.Navigator>
-                  <Stack.Screen
+                  {/* <Stack.Screen
                     name="Home"
                     component={Home}
                     options={{ title: 'FanApp', headerShown: false }}
+                  /> */}
+                      <Stack.Screen
+                    name="FanSpaceHome"
+                    component={FanAppHome}
+                    options={{ title: 'FanSpace', headerShown: false }}
                   />
                   <Stack.Screen
                     name="Login"
@@ -37,7 +44,7 @@ export const Pages = () => {
                   <Stack.Screen
                     name="Channel"
                     component={Channel}
-                    options={{ title: '' ,}}
+                    options={{ headerShown: false}}
                   />
                 </Stack.Navigator>
               </NavigationContainer>

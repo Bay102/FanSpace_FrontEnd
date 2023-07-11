@@ -27,7 +27,7 @@ export const Login = ({ navigation }: any) => {
         position: 385,
       });
 
-      navigation.navigate('Home');
+      navigation.navigate('FanSpaceHome');
     } catch (e) {
       Toast.show(`${e}`, {
         duration: Toast.durations.LONG,

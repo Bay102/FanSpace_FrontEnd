@@ -4,12 +4,12 @@
     "slug": "FanApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/Banner.png",
+    "icon": "./assets/images/splash.png",
     "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/images/Banner.png",
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#46464a"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -24,8 +24,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/FanAppLogo.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage":"./assets/images/splash.png",
+        "backgroundColor": "#46464a"
       },
       "infoPlist": {
         "NSAppTransportSecurity": {
