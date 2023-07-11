@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const teamStyles = StyleSheet.create({
+export const ChannelStyles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',

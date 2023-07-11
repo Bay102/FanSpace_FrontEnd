@@ -58,7 +58,7 @@ export const SignUp = ({ navigation }: any) => {
         <TextInput
           style={SignUpStyles.inputs}
           onChangeText={setEmail}
-          value={email}
+          value={email.toLocaleLowerCase()}
           keyboardType="email-address"
           placeholder="Email"
           placeholderTextColor={'gray'}

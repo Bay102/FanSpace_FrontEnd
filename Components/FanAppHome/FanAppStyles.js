@@ -24,6 +24,11 @@ export const FanAppStyles = StyleSheet.create({
   headerText: {
     fontFamily: 'ABeeZee_400Regular',
     fontSize: 30,
+    marginTop: 12,
+  },
+
+  nameText: {
+    fontSize: 15
   },
 
   channelsContainer: {

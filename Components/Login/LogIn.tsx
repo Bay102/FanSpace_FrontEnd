@@ -13,13 +13,13 @@ export const Login = ({ navigation }: any) => {
   const { user, setUser } = useAuthProvider();
 
   const handleLogin = async () => {
-    // if (user) { setUser(null) }
     try {
       if (!email || !password) {
         throw new Error('Inputs Required');
       }
 
-      await login({ email, password }).then((user) => setUser(user));
+      const user = await login({ email, password });
+      setUser(user);
 
       Toast.show('LogIn Success', {
         duration: Toast.durations.LONG,
@@ -45,7 +45,7 @@ export const Login = ({ navigation }: any) => {
         <TextInput
           style={LoginStyles.input}
           onChangeText={setEmail}
-          value={email}
+          value={email.toLocaleLowerCase()}
           placeholder="Email"
           placeholderTextColor="gray"
         />

@@ -29,16 +29,16 @@ export type NavigationProviderTypes = {
 export type NavItem = {
   id: number;
   name: JSX.Element;
-  image: string;
-  onPress: () => void;
+  image?: string;
+  onPress: () => void | undefined;
 };
 
 export type PagesProps = {
   [key: string]: JSX.Element;
 };
 
-export type TeamPageProps = {
-  teamName: string;
+export type ChannelProps = {
+  channelName: string;
 };
 
 export type Channel = {

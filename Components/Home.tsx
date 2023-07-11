@@ -23,10 +23,10 @@ import { useAuthProvider } from '../Providers/AuthProvider';
 SplashScreen.preventAutoHideAsync();
 
 export const Home = () => {
-  const {user} = useAuthProvider()
+  const { user } = useAuthProvider();
   const { activePage, showSideNav, showBottomNav } = useNavigationProvider();
 
-  //* ///// Font / Splashscreen /////
+  //* ///// Font / Splash-Screen /////
   const [fontsLoaded] = useFonts({
     Inter_900Black,
     ABeeZee_400Regular,
@@ -44,10 +44,9 @@ export const Home = () => {
   }
   //* ///////////////////////////////////
 
+  //* render default components here,
   const RenderChannel: PagesProps = {
     FanApp: <FanAppHome />,
-    VGK: <VegasGoldenKnights />,
-    Raiders: <VegasRaiders />,
   };
 
   return (

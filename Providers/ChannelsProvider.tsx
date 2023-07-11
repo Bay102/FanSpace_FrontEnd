@@ -6,19 +6,25 @@ import { Channel, ChannelsTypes } from '../types';
 const ChannelsContext = createContext({} as ChannelsTypes);
 
 export const ChannelsProvider = ({ children }: { children: JSX.Element }) => {
-   const { user } = useAuthProvider();
+  const { user } = useAuthProvider();
 
-   const [allChannels, setAllChannels] = useState([]);
-   const [usersChannels, setUsersChannels] = useState<Channel[] | null >([]);
+  const [allChannels, setAllChannels] = useState([]);
+  const [usersChannels, setUsersChannels] = useState<Channel[] | null>([]);
 
-  
   useEffect(() => {
-    getAllChannels().then((channels) => setAllChannels(channels));
-    setUsersChannels(user?.channels as Channel[])
+    const fetchData = async () => {
+      const channels = await getAllChannels();
+      setAllChannels(channels);
+      setUsersChannels(user?.channels as Channel[]);
+    };
+
+    fetchData();
   }, [user]);
 
   return (
-    <ChannelsContext.Provider value={{ allChannels, usersChannels, setUsersChannels }}>
+    <ChannelsContext.Provider
+      value={{ allChannels, usersChannels, setUsersChannels }}
+    >
       {children}
     </ChannelsContext.Provider>
   );

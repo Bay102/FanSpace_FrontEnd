@@ -10,23 +10,24 @@ import { useNavigationProvider } from '../Providers/NavigationProvider';
 import { useChannelsProvider } from '../Providers/ChannelsProvider';
 import { useAuthProvider } from '../Providers/AuthProvider';
 import { NavItem } from '../types';
+import { useNavigation } from '@react-navigation/native';
 
 export const SideNav = () => {
   const { user } = useAuthProvider();
   const { setActivePage } = useNavigationProvider();
   const { usersChannels } = useChannelsProvider();
-
-  const [navChannels, setNavChannels] = useState<any>([]);
+  const navigation: any = useNavigation();
+  const [navChannels, setNavChannels] = useState<any>(null);
 
   useEffect(() => {
     if (user) {
-      const channelIcon = usersChannels?.map((channel) => ({
+      const channels = usersChannels?.map((channel) => ({
         id: channel.id,
         name: channel.name,
-        // image: '',
-        onPress: () => setActivePage(`${channel.name}`),
+        image: '',
+        onPress: () => navigation.navigate('Channel', { channelData: channel }),
       }));
-      setNavChannels(channelIcon);
+      setNavChannels(channels);
     }
   }, [usersChannels]);
 
@@ -44,7 +45,7 @@ export const SideNav = () => {
       onPress: () => setActivePage('FanApp'),
     },
     {
-      id: '5000',
+      id: '3000',
       name: 'fanapp',
       image: <FontAwesomeIcon icon={faHouse} size={25} color="white" />,
       onPress: () => setActivePage('FanApp'),
@@ -54,7 +55,7 @@ export const SideNav = () => {
   return (
     <Animatable.View
       animation={'slideInRight'}
-      duration={300}
+      duration={275}
       style={{ height: '100%', backgroundColor: 'black' }}
     >
       <View style={styles.sideNav}>

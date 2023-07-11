@@ -8,6 +8,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AuthProvider } from '../Providers/AuthProvider';
 import { UserProvider } from '../Providers/UserProvider';
 import { ChannelsProvider } from '../Providers/ChannelsProvider';
+import { UserProfile } from './UserProfile/UserProfile';
+import { Channel } from './ChannelPage/Channel';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +20,6 @@ export const Pages = () => {
         <AuthProvider>
           <UserProvider>
             <ChannelsProvider>
-
               <NavigationContainer>
                 <Stack.Navigator>
                   <Stack.Screen
@@ -32,9 +33,14 @@ export const Pages = () => {
                     options={{ title: 'Login' }}
                   />
                   <Stack.Screen name="SignUp" component={SignUp} />
+                  <Stack.Screen name="UserProfile" component={UserProfile} />
+                  <Stack.Screen
+                    name="Channel"
+                    component={Channel}
+                    options={{ title: '' ,}}
+                  />
                 </Stack.Navigator>
               </NavigationContainer>
-              
             </ChannelsProvider>
           </UserProvider>
         </AuthProvider>

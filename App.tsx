@@ -3,7 +3,7 @@ import { Pages } from './Components/Pages';
 import { RootSiblingParent } from 'react-native-root-siblings';
 
 export default function App() {
-  //* Root Sibling = react toast
+  //* Root Sibling for react toast
   return (
     <>
       <RootSiblingParent> 

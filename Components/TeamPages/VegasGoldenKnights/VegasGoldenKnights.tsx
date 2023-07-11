@@ -1,6 +1,11 @@
 import React from 'react';
-import { TeamPage } from '../../TeamPageComponent/TeamPage';
+import { TeamPage } from '../../ChannelPage/Channel';
 
 export const VegasGoldenKnights = () => {
-  return <TeamPage teamName={'Vegas Golden Knights'} />;
+
+  return (
+    <>
+    <TeamPage channelName={'Vegas Golden Knights'} />
+    </>
+  ) 
 };
