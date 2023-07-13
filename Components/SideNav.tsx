@@ -13,10 +13,12 @@ import { NavItem } from '../types';
 import { useNavigation } from '@react-navigation/native';
 
 export const SideNav = () => {
+  const navigation: any = useNavigation();
+
   const { user } = useAuthProvider();
   const { setActivePage } = useNavigationProvider();
   const { usersChannels } = useChannelsProvider();
-  const navigation: any = useNavigation();
+
   const [navChannels, setNavChannels] = useState<any>(null);
 
   useEffect(() => {
@@ -33,22 +35,15 @@ export const SideNav = () => {
 
   const navItems = [
     {
-      id: '1000',
+      id: '1',
       name: 'chat',
       image: <Ionicons name="chatbubbles-outline" size={28} color="white" />,
       onPress: () => setActivePage('FanApp'),
     },
     {
-      id: '2000',
-      name: 'sell',
-      image: <FontAwesomeIcon icon={faCommentDollar} size={25} color="white" />,
-      onPress: () => setActivePage('FanApp'),
-    },
-    {
-      id: '3000',
+      id: '2',
       name: 'fanapp',
       image: <FontAwesomeIcon icon={faHouse} size={25} color="white" />,
-      // onPress: () => setActivePage('FanApp'),
       onPress: () => navigation.navigate('FanSpaceHome'),
     },
   ];

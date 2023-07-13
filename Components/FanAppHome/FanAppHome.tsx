@@ -1,7 +1,6 @@
-import { Button, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { FanAppStyles } from './FanAppStyles';
 import React, { useCallback } from 'react';
-import { getUserPages } from '../../Api/get-user-pages';
 import { useAuthProvider } from '../../Providers/AuthProvider';
 import { useUserProvider } from '../../Providers/UserProvider';
 import { Channel } from '../../types';
@@ -22,8 +21,7 @@ SplashScreen.preventAutoHideAsync();
 export const FanAppHome = () => {
   const { user } = useAuthProvider();
   const { allChannels } = useChannelsProvider();
-  const { activePage, showSideNav, showBottomNav } = useNavigationProvider();
-
+  const { showSideNav, showBottomNav } = useNavigationProvider();
 
   // //* ///// Font / Splash-Screen /////
   const [fontsLoaded] = useFonts({
@@ -64,12 +62,10 @@ export const FanAppHome = () => {
           </ScrollView>
         </View>
       </View>
-      
+
       {user && showSideNav && <SideNav />}
       {showBottomNav && <BottomNav />}
-
     </View>
   );
 };
 
-// <Button title="button" onPress={() => console.log(allChannels)}></Button>

@@ -21,8 +21,8 @@ export const styles = StyleSheet.create({
   },
 
   sideNav: {
-    backgroundColor: '#b68f45',
-    borderWidth: 2,
+    backgroundColor: '#3a3a3d',
+    // borderWidth: 2,
     borderColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',

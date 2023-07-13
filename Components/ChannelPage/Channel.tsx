@@ -12,7 +12,6 @@ export const Channel = ({ route }: any) => {
   const { activePage, showSideNav, showBottomNav } = useNavigationProvider();
 
   const { channelData } = route.params;
-  console.log(channelData);
 
   return (
     <>
@@ -21,9 +20,7 @@ export const Channel = ({ route }: any) => {
           <View style={ChannelStyles.headerContainer}>
             <Text style={ChannelStyles.headerText}>{channelData.name}</Text>
           </View>
-          <View style={ChannelStyles.buttonsContainer}>
-            {/* <Button title="im a button" onPress={''} /> */}
-          </View>
+          <View style={ChannelStyles.buttonsContainer}></View>
 
           <View style={ChannelStyles.channels}>
             <ScrollView>

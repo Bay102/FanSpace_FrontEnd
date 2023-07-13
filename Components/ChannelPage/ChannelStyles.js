@@ -28,10 +28,11 @@ export const ChannelStyles = StyleSheet.create({
     width: '100%',
     height: 120,
     borderWidth: 1,
-    borderColor: 'red',
+    // borderColor: 'red',
   },
   headerText: {
-    borderWidth: 1,
+    // borderWidth: 1,
+    fontSize: 44,
     fontFamily: 'Cochin',
   },
 
@@ -39,13 +40,14 @@ export const ChannelStyles = StyleSheet.create({
     width: '100%',
     height: 100,
     borderWidth: 1,
-    borderColor: 'yellow',
+    backgroundColor: 'white',
+    // borderColor: 'yellow',
   },
 
   channels: {
     width: '100%',
     height: 800,
     borderWidth: 2,
-    borderColor: 'blue',
+    // borderColor: 'blue',
   },
 });

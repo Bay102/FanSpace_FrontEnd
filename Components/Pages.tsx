@@ -1,5 +1,4 @@
 import React from 'react';
-import { Home } from './Home';
 import { Login } from './Login/LogIn';
 import { SignUp } from './SignUp/SignUp';
 import { NavigationProvider } from '../Providers/NavigationProvider';
@@ -15,7 +14,6 @@ import { FanAppHome } from './FanAppHome/FanAppHome';
 const Stack = createNativeStackNavigator();
 
 export const Pages = () => {
-  
   return (
     <>
       <NavigationProvider>
@@ -24,12 +22,7 @@ export const Pages = () => {
             <ChannelsProvider>
               <NavigationContainer>
                 <Stack.Navigator>
-                  {/* <Stack.Screen
-                    name="Home"
-                    component={Home}
-                    options={{ title: 'FanApp', headerShown: false }}
-                  /> */}
-                      <Stack.Screen
+                  <Stack.Screen
                     name="FanSpaceHome"
                     component={FanAppHome}
                     options={{ title: 'FanSpace', headerShown: false }}
@@ -44,7 +37,7 @@ export const Pages = () => {
                   <Stack.Screen
                     name="Channel"
                     component={Channel}
-                    options={{ headerShown: false}}
+                    options={{ headerShown: false }}
                   />
                 </Stack.Navigator>
               </NavigationContainer>
