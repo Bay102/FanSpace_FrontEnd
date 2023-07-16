@@ -42,11 +42,10 @@ export const FanAppHome = () => {
     return null;
   }
 
-
-const firebase_test = async () => {
-console.log('test');
-const doc = addDoc(collection(FIRESTORE_DB, 'Test'), {title : 'test'})
-}
+  const firebase_test = async () => {
+    console.log('test');
+    const doc = addDoc(collection(FIRESTORE_DB, 'Test'), { title: 'test' });
+  };
 
   return (
     <View style={FanAppStyles.mainContainer}>
@@ -67,7 +66,7 @@ const doc = addDoc(collection(FIRESTORE_DB, 'Test'), {title : 'test'})
         <View style={FanAppStyles.TBDcontainer}>
           <ScrollView>
             <Text>Hello</Text>
-            <Button onPress={() => firebase_test()} title='Test'/>
+            <Button onPress={() => firebase_test()} title="Test" />
           </ScrollView>
         </View>
       </View>
@@ -77,4 +76,3 @@ const doc = addDoc(collection(FIRESTORE_DB, 'Test'), {title : 'test'})
     </View>
   );
 };
-
