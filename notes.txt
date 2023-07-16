@@ -7,3 +7,6 @@ Font Awesome - Icons
 Google Fonts -
 Expo Google Fonts - 
 expo-splash-screen
+
+
+

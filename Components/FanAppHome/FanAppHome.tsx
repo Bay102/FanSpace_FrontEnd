@@ -1,4 +1,4 @@
-import { ScrollView, Text, View } from 'react-native';
+import { Button, ScrollView, Text, View } from 'react-native';
 import { FanAppStyles } from './FanAppStyles';
 import React, { useCallback } from 'react';
 import { useAuthProvider } from '../../Providers/AuthProvider';
@@ -15,6 +15,8 @@ import {
 import { SideNav } from '../SideNav';
 import { BottomNav } from '../BottomNav';
 import { useNavigationProvider } from '../../Providers/NavigationProvider';
+import { addDoc, collection } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FireBase.config';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -40,6 +42,12 @@ export const FanAppHome = () => {
     return null;
   }
 
+
+const firebase_test = async () => {
+console.log('test');
+const doc = addDoc(collection(FIRESTORE_DB, 'Test'), {title : 'test'})
+}
+
   return (
     <View style={FanAppStyles.mainContainer}>
       <View style={FanAppStyles.container} onLayout={onLayoutRootView}>
@@ -59,6 +67,7 @@ export const FanAppHome = () => {
         <View style={FanAppStyles.TBDcontainer}>
           <ScrollView>
             <Text>Hello</Text>
+            <Button onPress={() => firebase_test()} title='Test'/>
           </ScrollView>
         </View>
       </View>
