@@ -44,7 +44,7 @@ export const FanAppHome = () => {
 
   const firebase_test = async () => {
     console.log('test');
-    const doc = addDoc(collection(FIRESTORE_DB, 'Test'), { title: 'test' });
+    const doc = addDoc(collection(FIRESTORE_DB, 'Test'), { title: 'testing' });
   };
 
   return (
