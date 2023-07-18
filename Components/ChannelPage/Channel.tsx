@@ -9,7 +9,7 @@ import { useAuthProvider } from '../../Providers/AuthProvider';
 
 export const Channel = ({ route }: any) => {
   const { user } = useAuthProvider();
-  const { activePage, showSideNav, showBottomNav } = useNavigationProvider();
+  const { showSideNav, showBottomNav } = useNavigationProvider();
 
   const { channelData } = route.params;
 
@@ -19,6 +19,7 @@ export const Channel = ({ route }: any) => {
         <View style={ChannelStyles.container}>
           <View style={ChannelStyles.headerContainer}>
             <Text style={ChannelStyles.headerText}>{channelData.name}</Text>
+            <Text onPress={() => ''}>Follow</Text>
           </View>
           <View style={ChannelStyles.buttonsContainer}></View>
 

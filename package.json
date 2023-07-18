@@ -19,6 +19,7 @@
     "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
+    "@supabase/supabase-js": "^2.26.0",
     "@types/react": "~18.2.14",
     "expo": "^49.0.3",
     "expo-app-loading": "^2.1.1",

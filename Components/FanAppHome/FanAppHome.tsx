@@ -21,8 +21,10 @@ import { FIRESTORE_DB } from '../../FireBase.config';
 SplashScreen.preventAutoHideAsync();
 
 export const FanAppHome = () => {
+
   const { user } = useAuthProvider();
   const { allChannels } = useChannelsProvider();
+  
   const { showSideNav, showBottomNav } = useNavigationProvider();
 
   // //* ///// Font / Splash-Screen /////
