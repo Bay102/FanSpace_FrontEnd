@@ -76,7 +76,7 @@ export const FanAppHome = () => {
         </View>
         <View style={FanAppStyles.TBDcontainer}>
           <ScrollView>
-            <Text>Hello</Text>
+            <Text>Home</Text>
             <Button onPress={() => supabase_test()} title="Test" />
           </ScrollView>
         </View>
