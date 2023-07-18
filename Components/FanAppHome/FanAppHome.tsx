@@ -1,6 +1,6 @@
 import { Button, ScrollView, Text, View } from 'react-native';
 import { FanAppStyles } from './FanAppStyles';
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useAuthProvider } from '../../Providers/AuthProvider';
 import { useUserProvider } from '../../Providers/UserProvider';
 import { Channel } from '../../types';
@@ -17,14 +17,15 @@ import { BottomNav } from '../BottomNav';
 import { useNavigationProvider } from '../../Providers/NavigationProvider';
 import { addDoc, collection } from 'firebase/firestore';
 import { FIRESTORE_DB } from '../../FireBase.config';
+import { SUPABASE } from '../../Supabase.config';
 
 SplashScreen.preventAutoHideAsync();
 
 export const FanAppHome = () => {
-
+  const [test, setTest] = useState('');
   const { user } = useAuthProvider();
   const { allChannels } = useChannelsProvider();
-  
+
   const { showSideNav, showBottomNav } = useNavigationProvider();
 
   // //* ///// Font / Splash-Screen /////
@@ -44,9 +45,17 @@ export const FanAppHome = () => {
     return null;
   }
 
-  const firebase_test = async () => {
+  // const firebase_test = async () => {
+  //   console.log('test');
+  //   const doc = addDoc(collection(FIRESTORE_DB, 'Test'), { title: 'testing' });
+  // };
+
+  const supabase_test = async () => {
     console.log('test');
-    const doc = addDoc(collection(FIRESTORE_DB, 'Test'), { title: 'testing' });
+
+    const { data, error } = await SUPABASE.from('User').select();
+
+    console.log(data);
   };
 
   return (
@@ -68,7 +77,7 @@ export const FanAppHome = () => {
         <View style={FanAppStyles.TBDcontainer}>
           <ScrollView>
             <Text>Hello</Text>
-            <Button onPress={() => firebase_test()} title="Test" />
+            <Button onPress={() => supabase_test()} title="Test" />
           </ScrollView>
         </View>
       </View>
