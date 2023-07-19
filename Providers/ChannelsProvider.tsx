@@ -11,15 +11,15 @@ export const ChannelsProvider = ({ children }: { children: JSX.Element }) => {
   const [allChannels, setAllChannels] = useState([]);
   const [usersChannels, setUsersChannels] = useState<Channel[] | null>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const channels = await getAllChannels();
-      setAllChannels(channels);
-      setUsersChannels(user?.channels as Channel[]);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const channels = await getAllChannels();
+  //     setAllChannels(channels);
+  //     setUsersChannels(user?.channels as Channel[]);
+  //   };
 
-    fetchData();
-  }, [user]);
+  //   fetchData();
+  // }, [user]);
 
   return (
     <ChannelsContext.Provider

@@ -17,8 +17,8 @@ export const Login = ({ navigation }: any) => {
       if (!email || !password) {
         throw new Error('Inputs Required');
       }
-
       const user = await login({ email, password });
+
       setUser(user);
 
       Toast.show('LogIn Success', {

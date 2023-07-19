@@ -1,6 +1,8 @@
+import { Session, User } from "@supabase/gotrue-js";
+
 export type AuthTypes = {
-  user: User | null;
-  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  user: UserType | null;
+  setUser: React.Dispatch<React.SetStateAction< UserType | null>>;
 };
 
 export type ChannelsTypes = {
@@ -9,12 +11,8 @@ export type ChannelsTypes = {
   setUsersChannels: React.Dispatch<React.SetStateAction<Channel[] | null>>;
 };
 
-export type User = {
-  id: number;
-  name: string;
-  email: string;
-  passwordHash: string;
-  channels?: Channel[];
+export type UserType = {
+   user: User; session: Session; 
 };
 
 export type NavigationProviderTypes = {

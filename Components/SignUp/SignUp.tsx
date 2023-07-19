@@ -20,16 +20,14 @@ export const SignUp = ({ navigation }: any) => {
       if (!matchPasswords) {
         throw new Error("Passwords Don't Match");
       }
-      if (password.length < 6) {
-        throw new Error('Password must be at least 6 characters');
-      }
 
-      await createUser({ name, email, password });
+      await createUser({ email, password });
 
       setEmail('');
       setName('');
       setPassword('');
       setConfirmPassword('');
+
       navigation.navigate('Login');
 
       Toast.show('Account Created', {

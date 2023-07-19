@@ -16,7 +16,6 @@ import { SideNav } from '../SideNav';
 import { BottomNav } from '../BottomNav';
 import { useNavigationProvider } from '../../Providers/NavigationProvider';
 import { addDoc, collection } from 'firebase/firestore';
-import { FIRESTORE_DB } from '../../FireBase.config';
 import { SUPABASE } from '../../Supabase.config';
 
 SplashScreen.preventAutoHideAsync();
