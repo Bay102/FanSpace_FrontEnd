@@ -23,6 +23,8 @@ export const ChannelsProvider = ({ children }: { children: JSX.Element }) => {
     fetchData();
   }, [user]);
 
+  
+
   return (
     <ChannelsContext.Provider
       value={{ allChannels, usersChannels, setUsersChannels }}

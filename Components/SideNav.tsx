@@ -36,6 +36,7 @@ export const SideNav = () => {
         setNavChannels(loadedChannels);
       }
     };
+
     fetchChannels();
   }, [usersChannels]);
 

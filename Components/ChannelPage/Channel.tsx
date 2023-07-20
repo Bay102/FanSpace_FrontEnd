@@ -13,8 +13,8 @@ export const Channel = ({ route }: any) => {
   const { showSideNav, showBottomNav } = useNavigationProvider();
 
   const { channelData } = route.params;
-  
-  log.info('1', channelData);
+
+  // log.info('1', channelData);
 
   return (
     <>
