@@ -2,7 +2,6 @@ import { Button, ScrollView, Text, View } from 'react-native';
 import { FanAppStyles } from './FanAppStyles';
 import React, { useCallback, useState } from 'react';
 import { useAuthProvider } from '../../Providers/AuthProvider';
-import { useUserProvider } from '../../Providers/UserProvider';
 import { Channel } from '../../types';
 import { useChannelsProvider } from '../../Providers/ChannelsProvider';
 import * as SplashScreen from 'expo-splash-screen';
@@ -15,13 +14,10 @@ import {
 import { SideNav } from '../SideNav';
 import { BottomNav } from '../BottomNav';
 import { useNavigationProvider } from '../../Providers/NavigationProvider';
-import { addDoc, collection } from 'firebase/firestore';
-import { SUPABASE } from '../../Supabase.config';
 
 SplashScreen.preventAutoHideAsync();
 
 export const FanAppHome = () => {
-  const [test, setTest] = useState('');
   const { user } = useAuthProvider();
   const { allChannels } = useChannelsProvider();
 
@@ -44,25 +40,12 @@ export const FanAppHome = () => {
     return null;
   }
 
-  // const firebase_test = async () => {
-  //   console.log('test');
-  //   const doc = addDoc(collection(FIRESTORE_DB, 'Test'), { title: 'testing' });
-  // };
-
-  const supabase_test = async () => {
-    console.log('test');
-
-    const { data, error } = await SUPABASE.from('User').select();
-
-    console.log(data);
-  };
-
   return (
     <View style={FanAppStyles.mainContainer}>
       <View style={FanAppStyles.container} onLayout={onLayoutRootView}>
         <View style={FanAppStyles.headerContainer}>
           <Text style={FanAppStyles.headerText}>FAN SPACE</Text>
-          <Text style={FanAppStyles.nameText}>Welcome {user?.name}</Text>
+          <Text style={FanAppStyles.nameText}>Welcome {user?.user.email}</Text>
         </View>
         <View style={FanAppStyles.channelsContainer}>
           <View style={FanAppStyles.channels}>
@@ -76,11 +59,9 @@ export const FanAppHome = () => {
         <View style={FanAppStyles.TBDcontainer}>
           <ScrollView>
             <Text>Home</Text>
-            <Button onPress={() => supabase_test()} title="Test" />
           </ScrollView>
         </View>
       </View>
-
       {user && showSideNav && <SideNav />}
       {showBottomNav && <BottomNav />}
     </View>

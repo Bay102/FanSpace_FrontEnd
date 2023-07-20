@@ -6,13 +6,14 @@ export type AuthTypes = {
 };
 
 export type ChannelsTypes = {
-  allChannels: Channel[];
+  allChannels: Channel[] | null;
   usersChannels: Channel[] | null;
   setUsersChannels: React.Dispatch<React.SetStateAction<Channel[] | null>>;
 };
 
 export type UserType = {
-   user: User; session: Session; 
+   user: User; 
+   session: Session; 
 };
 
 export type NavigationProviderTypes = {

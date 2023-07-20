@@ -9,8 +9,9 @@ import { useState } from 'react';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
 import { useChannelsProvider } from '../Providers/ChannelsProvider';
 import { useAuthProvider } from '../Providers/AuthProvider';
-import { NavItem } from '../types';
 import { useNavigation } from '@react-navigation/native';
+import { log } from '../App';
+import { getUserChannels } from '../Api/get-user-channels';
 
 export const SideNav = () => {
   const navigation: any = useNavigation();
@@ -22,15 +23,20 @@ export const SideNav = () => {
   const [navChannels, setNavChannels] = useState<any>(null);
 
   useEffect(() => {
-    if (user) {
-      const channels = usersChannels?.map((channel) => ({
-        id: channel.id,
-        name: channel.name,
-        image: '',
-        onPress: () => navigation.navigate('Channel', { channelData: channel }),
-      }));
-      setNavChannels(channels);
-    }
+    const fetchChannels = async () => {
+      if (user) {
+        const channels = await getUserChannels(user.user.id);
+
+        const loadedChannels = channels.map((channel) => ({
+          name: channel.channel_name,
+          image: 'test',
+          onPress: () => navigation.navigate('Channel', { channelData: channel }),
+        }));
+
+        setNavChannels(loadedChannels);
+      }
+    };
+    fetchChannels();
   }, [usersChannels]);
 
   const navItems = [
@@ -57,13 +63,13 @@ export const SideNav = () => {
       <View style={styles.sideNav}>
         <ScrollView>
           {navItems.map((channel) => (
-            <View style={styles.channelCircle} key={channel.id}>
+            <View style={styles.channelCircle} key={channel.name}>
               <Text onPress={channel.onPress}>{channel.image && channel.image}</Text>
             </View>
           ))}
           {navChannels &&
-            navChannels.map((channel: NavItem) => (
-              <View style={styles.channelCircle} key={channel.id}>
+            navChannels.map((channel: any, index: number) => (
+              <View style={styles.channelCircle} key={index}>
                 <Text onPress={channel.onPress} style={styles.channelName}>
                   {channel.name}
                 </Text>

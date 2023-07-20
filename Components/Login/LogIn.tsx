@@ -5,6 +5,7 @@ import { LoginStyles } from './Login.styles';
 import { login } from '../../Api/login';
 import { useAuthProvider } from '../../Providers/AuthProvider';
 import Toast from 'react-native-root-toast';
+import { log } from '../../App';
 
 export const Login = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
