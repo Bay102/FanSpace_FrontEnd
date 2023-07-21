@@ -1,8 +1,9 @@
-import { Session, User } from "@supabase/gotrue-js";
+import { Session, User } from '@supabase/gotrue-js';
+import { GestureResponderEvent } from 'react-native';
 
 export type AuthTypes = {
   user: UserType | null;
-  setUser: React.Dispatch<React.SetStateAction< UserType | null>>;
+  setUser: React.Dispatch<React.SetStateAction<UserType | null>>;
 };
 
 export type ChannelsTypes = {
@@ -12,8 +13,8 @@ export type ChannelsTypes = {
 };
 
 export type UserType = {
-   user: User; 
-   session: Session; 
+  user: User;
+  session: Session;
 };
 
 export type NavigationProviderTypes = {
@@ -41,7 +42,9 @@ export type ChannelProps = {
 };
 
 export type Channel = {
-  [key: string | number]: string | number;
+  name: string;
+  image: string;
+  onPress: ((event: GestureResponderEvent) => void) | undefined;
 };
 
 export type NewUser = {

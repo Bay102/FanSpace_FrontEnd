@@ -49,8 +49,8 @@ export const FanAppHome = () => {
         </View>
         <View style={FanAppStyles.channelsContainer}>
           <View style={FanAppStyles.channels}>
-            {allChannels?.map((channel: Channel) => (
-              <View style={FanAppStyles.channelCircle} key={channel.id}>
+            {allChannels?.map((channel: Channel, index: number) => (
+              <View style={FanAppStyles.channelCircle} key={index}>
                 <Text style={FanAppStyles.circleText}>{channel.name}</Text>
               </View>
             ))}

@@ -1,6 +1,7 @@
 import { log } from '../App';
 import { SUPABASE } from '../Supabase.config';
-import { API_CONFIG } from './api-config';
+
+
 
 export const getUserChannels = async (userId: string) => {
   const { data, error } = await SUPABASE.from('Users_Channels')
@@ -11,6 +12,6 @@ export const getUserChannels = async (userId: string) => {
     throw new Error(`${error}`);
   }
 
-  // log.info(data);
+
   return data;
 };

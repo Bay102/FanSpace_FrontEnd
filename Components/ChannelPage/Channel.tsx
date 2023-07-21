@@ -14,7 +14,7 @@ export const Channel = ({ route }: any) => {
 
   const { channelData } = route.params;
 
-  // log.info('1', channelData);
+  
 
   return (
     <>

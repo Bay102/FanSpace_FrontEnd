@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Image, ImageBackground, ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './Styles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
@@ -12,6 +12,8 @@ import { useAuthProvider } from '../Providers/AuthProvider';
 import { useNavigation } from '@react-navigation/native';
 import { log } from '../App';
 import { getUserChannels } from '../Api/get-user-channels';
+import { getImageUrl } from '../Api/get-ImageUrl';
+import { Channel } from '../types';
 
 export const SideNav = () => {
   const navigation: any = useNavigation();
@@ -27,9 +29,9 @@ export const SideNav = () => {
       if (user) {
         const channels = await getUserChannels(user.user.id);
 
-        const loadedChannels = channels.map((channel) => ({
+        const loadedChannels = channels.map((channel: any) => ({
           name: channel.channel_name,
-          image: 'test',
+          image: getImageUrl('channel_icons', `${channel.channel_name}.png`),
           onPress: () => navigation.navigate('Channel', { channelData: channel }),
         }));
 
@@ -69,12 +71,15 @@ export const SideNav = () => {
             </View>
           ))}
           {navChannels &&
-            navChannels.map((channel: any, index: number) => (
-              <View style={styles.channelCircle} key={index}>
-                <Text onPress={channel.onPress} style={styles.channelName}>
-                  {channel.name}
-                </Text>
-              </View>
+            navChannels.map((channel: Channel, index: number) => (
+              <TouchableOpacity key={index} onPress={channel.onPress}>
+                <View style={styles.channelCircle} key={index}>
+                  <Image
+                    source={{ uri: `${channel.image}` }}
+                    style={{ width: 45, height: 45, borderRadius: 25 }}
+                  />
+                </View>
+              </TouchableOpacity>
             ))}
         </ScrollView>
       </View>

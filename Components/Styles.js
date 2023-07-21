@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     borderRadius: 25,
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
     marginTop: 35,
     marginBottom: 0,
   },
