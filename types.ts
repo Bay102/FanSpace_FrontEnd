@@ -27,7 +27,7 @@ export type NavigationProviderTypes = {
 };
 
 export type NavItem = {
-  id: number;
+  id?: number;
   name: JSX.Element;
   image?: string;
   onPress: () => void | undefined;

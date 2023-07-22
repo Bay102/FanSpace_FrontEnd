@@ -14,8 +14,6 @@ export const Channel = ({ route }: any) => {
 
   const { channelData } = route.params;
 
-  
-
   return (
     <>
       <View style={ChannelStyles.mainContainer}>

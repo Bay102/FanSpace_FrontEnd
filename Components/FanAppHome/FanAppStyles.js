@@ -26,7 +26,7 @@ export const FanAppStyles = StyleSheet.create({
     textAlign: 'center',
     width: '100%',
     height: 120,
-    borderWidth: 1,
+    marginTop: 20,
     // borderColor: 'red',
   },
   headerText: {

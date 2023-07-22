@@ -13,7 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import { log } from '../App';
 import { getUserChannels } from '../Api/get-user-channels';
 import { getImageUrl } from '../Api/get-ImageUrl';
-import { Channel } from '../types';
+import { Channel, NavItem } from '../types';
 
 export const SideNav = () => {
   const navigation: any = useNavigation();
@@ -22,14 +22,14 @@ export const SideNav = () => {
   const { setActivePage } = useNavigationProvider();
   const { usersChannels } = useChannelsProvider();
 
-  const [navChannels, setNavChannels] = useState<any>(null);
+  const [navChannels, setNavChannels] = useState<Channel[] | null>(null);
 
   useEffect(() => {
     const fetchChannels = async () => {
       if (user) {
         const channels = await getUserChannels(user.user.id);
 
-        const loadedChannels = channels.map((channel: any) => ({
+        const loadedChannels = channels.map((channel) => ({
           name: channel.channel_name,
           image: getImageUrl('channel_icons', `${channel.channel_name}.png`),
           onPress: () => navigation.navigate('Channel', { channelData: channel }),
@@ -40,17 +40,15 @@ export const SideNav = () => {
     };
 
     fetchChannels();
-  }, [usersChannels]);
+  }, []);
 
   const navItems = [
     {
-      id: '1',
       name: 'chat',
       image: <Ionicons name="chatbubbles-outline" size={28} color="white" />,
       onPress: () => setActivePage('FanApp'),
     },
     {
-      id: '2',
       name: 'fanapp',
       image: <FontAwesomeIcon icon={faHouse} size={25} color="white" />,
       onPress: () => navigation.navigate('FanSpaceHome'),
@@ -65,15 +63,19 @@ export const SideNav = () => {
     >
       <View style={styles.sideNav}>
         <ScrollView>
-          {navItems.map((channel) => (
-            <View style={styles.channelCircle} key={channel.name}>
-              <Text onPress={channel.onPress}>{channel.image && channel.image}</Text>
-            </View>
+          {navItems.map((channel, index) => (
+            <TouchableOpacity key={index} onPress={channel.onPress}>
+              <View style={styles.channelCircle}>
+                <Text>
+                  {channel.image && channel.image}
+                </Text>
+              </View>
+            </TouchableOpacity>
           ))}
           {navChannels &&
             navChannels.map((channel: Channel, index: number) => (
               <TouchableOpacity key={index} onPress={channel.onPress}>
-                <View style={styles.channelCircle} key={index}>
+                <View style={styles.channelCircle}>
                   <Image
                     source={{ uri: `${channel.image}` }}
                     style={{ width: 45, height: 45, borderRadius: 25 }}

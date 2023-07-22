@@ -26,7 +26,7 @@ export const ChannelStyles = StyleSheet.create({
     alignItems: 'center',
     textAlign: 'center',
     width: '100%',
-    height: 120,
+    height: 140,
     borderWidth: 1,
     // borderColor: 'red',
   },
@@ -34,6 +34,7 @@ export const ChannelStyles = StyleSheet.create({
     // borderWidth: 1,
     fontSize: 44,
     fontFamily: 'Cochin',
+    marginTop: 20
   },
 
   buttonsContainer: {
