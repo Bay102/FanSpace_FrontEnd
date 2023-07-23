@@ -14,6 +14,7 @@ import { log } from '../App';
 import { getUserChannels } from '../Api/get-user-channels';
 import { getImageUrl } from '../Api/get-ImageUrl';
 import { Channel, NavItem } from '../types';
+import { getUsers } from '../Api/queryPractice';
 
 export const SideNav = () => {
   const navigation: any = useNavigation();
@@ -23,6 +24,11 @@ export const SideNav = () => {
   const { usersChannels } = useChannelsProvider();
 
   const [navChannels, setNavChannels] = useState<Channel[] | null>(null);
+
+  const test = () => {
+    getUsers()
+    // log.info('test')
+  }
 
   useEffect(() => {
     const fetchChannels = async () => {
@@ -46,7 +52,7 @@ export const SideNav = () => {
     {
       name: 'chat',
       image: <Ionicons name="chatbubbles-outline" size={28} color="white" />,
-      onPress: () => setActivePage('FanApp'),
+      onPress: test,
     },
     {
       name: 'fanapp',
@@ -78,7 +84,7 @@ export const SideNav = () => {
                 <View style={styles.channelCircle}>
                   <Image
                     source={{ uri: `${channel.image}` }}
-                    style={{ width: 45, height: 45, borderRadius: 25 }}
+                    style={{ width: 40, height: 40, borderRadius: 25, borderWidth: 1 }}
                   />
                 </View>
               </TouchableOpacity>
