@@ -6,7 +6,7 @@ export const FanAppStyles = StyleSheet.create({
     flexDirection: 'row',
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
-    backgroundColor: '#2c303b',
+    // backgroundColor: '#141414',
     borderWidth: 2,
   },
   container: {
@@ -16,7 +16,8 @@ export const FanAppStyles = StyleSheet.create({
     textAlign: 'center',
     width: '100%',
     height: '100%',
-    borderWidth: 2,
+    // borderWidth: 2,
+    backgroundColor: '#1f2323',
   },
 
   headerContainer: {
@@ -25,39 +26,60 @@ export const FanAppStyles = StyleSheet.create({
     alignItems: 'center',
     textAlign: 'center',
     width: '100%',
-    height: 120,
+    height: 100,
     marginTop: 20,
     // borderColor: 'red',
+    // backgroundColor: 'white',
   },
+
   headerText: {
-    fontFamily: 'ABeeZee_400Regular',
+    fontFamily: 'Roboto_700Bold',
     fontSize: 30,
     marginTop: 12,
+    color: 'white',
+  },
+
+  beta: {
+    fontSize: 15,
+    fontStyle: 'italic',
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 5,
+    padding: 3,
+    marginTop: 5,
+    color: 'white',
+    // borderBottomColor: 'green',
   },
 
   nameText: {
     fontSize: 15,
   },
 
-  channelsContainer: {
+  notificationsContainer: {
+    flex: 0,
     width: '100%',
-    height: 100,
-    borderWidth: 1,
-    // borderColor: 'yellow',
+    height: 110,
+    // borderWidth: .2,
+    backgroundColor: '#141414',
     justifyContent: 'center',
+  },
+
+  notificationHeader: {
+    fontSize: 13,
+    fontFamily: 'Roboto_700Bold',
+    color: 'white',
+    position: 'relative',
+    top: -8,
+    left: 5,
   },
 
   TBDcontainer: {
     width: '100%',
     height: 800,
-    borderWidth: 2,
-    // borderColor: 'blue',
     alignItems: 'center',
-    // justifyContent: 'flex-start'
   },
 
   channels: {
-    // flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
   },

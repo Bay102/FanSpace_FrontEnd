@@ -9,7 +9,7 @@ export const getUsers = async () => {
   if (error) {
     throw new Error(`${error}`);
   }
-log.info(data)
+// log.info(data)
   return data;
 };
  

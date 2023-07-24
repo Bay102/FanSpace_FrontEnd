@@ -57,7 +57,6 @@ export const LoginStyles = StyleSheet.create({
   loginTxt: {
     textAlign: 'center',
     color: 'white',
-    fontFamily: 'Inter_900Black',
   },
 
   not: {

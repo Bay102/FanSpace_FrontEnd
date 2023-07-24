@@ -4,7 +4,7 @@ import { styles } from './Styles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faCommentDollar, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useNavigationProvider } from '../Providers/NavigationProvider';
 import { useChannelsProvider } from '../Providers/ChannelsProvider';
@@ -46,7 +46,7 @@ export const SideNav = () => {
     };
 
     fetchChannels();
-  }, []);
+  }, [user]);
 
   const navItems = [
     {
@@ -64,7 +64,7 @@ export const SideNav = () => {
   return (
     <Animatable.View
       animation={'slideInRight'}
-      duration={275}
+      duration={875}
       style={{ height: '100%', backgroundColor: 'black' }}
     >
       <View style={styles.sideNav}>
@@ -84,7 +84,7 @@ export const SideNav = () => {
                 <View style={styles.channelCircle}>
                   <Image
                     source={{ uri: `${channel.image}` }}
-                    style={{ width: 40, height: 40, borderRadius: 25, borderWidth: 1 }}
+                    style={{ width: 42, height: 42, borderRadius: 25, borderWidth: .5, borderColor: 'white' }}
                   />
                 </View>
               </TouchableOpacity>

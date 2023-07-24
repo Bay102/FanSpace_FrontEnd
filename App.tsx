@@ -7,7 +7,7 @@ import { RootSiblingParent } from 'react-native-root-siblings';
 export const log = logger.createLogger({
   transportOptions: {
     colors: {
-      info: "yellowBright",
+      info: "blue",
       warn: "yellowBright",
       error: "redBright",
       debug: "white",

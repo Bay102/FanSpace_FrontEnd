@@ -6,8 +6,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height + 10,
-    backgroundColor: '#2c303b',
-    borderWidth: 2,
+    // backgroundColor: '#080808',
+    // borderWidth: 2,
   },
 
   homeContent: {
@@ -17,18 +17,22 @@ export const styles = StyleSheet.create({
 
   sideNavContainer: {
     flex: 1,
-    borderWidth: 1,
+    // borderWidth: 1,
   },
 
   sideNav: {
-    backgroundColor: '#262424',
-    // borderWidth: 2,
-    // borderColor: 'green',
+    backgroundColor: '#141414',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 50,
+    width: 55,
     height: Dimensions.get('window').height,
-    color: 'white',
+    // borderWidth: .2,
+    // borderLeftColor: 'white',
+    // shadowColor: 'white',
+    // shadowOffset: { width: 10, height: 2 },
+    // shadowOpacity: 0.1,
+    // shadowRadius: 2,
+    
   },
 
   channelCircle: {
@@ -37,8 +41,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     width: 44,
     height: 44,
-    // borderWidth: .5,
-    // borderColor: 'white',
+    borderWidth: .2,
+    borderColor: 'white',
     borderRadius: 25,
     backgroundColor: 'black',
     marginTop: 35,
@@ -58,10 +62,11 @@ export const styles = StyleSheet.create({
     bottom: -3,
     width: Dimensions.get('window').width,
     height: 60,
-    borderWidth: 1,
-    borderColor: '',
-    backgroundColor: '#191919',
     color: 'white',
+    zIndex: 1,
+    borderTopWidth: .3,
+    borderTopColor: 'rgba(255, 255, 255, 0.5)',
+    backgroundColor: '#141414',
   },
 
   bottomNavItemContainer: {
